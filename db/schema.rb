@@ -10,10 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161210103140) do
+ActiveRecord::Schema.define(version: 20161215101311) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "exhibits", force: :cascade do |t|
+    t.string   "name"
+    t.string   "fond_group"
+    t.string   "section"
+    t.integer  "collection_number"
+    t.integer  "inventory_number"
+    t.integer  "another_inv_num"
+    t.integer  "photo_number"
+    t.string   "dating"
+    t.string   "material"
+    t.string   "size_or_weight"
+    t.string   "condition"
+    t.boolean  "renewal"
+    t.string   "date_of_renewal"
+    t.string   "storage_location"
+    t.string   "locality"
+    t.string   "museum_director"
+    t.string   "custodian"
+    t.string   "date_of_receipt"
+    t.integer  "act_of_reception_num"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
