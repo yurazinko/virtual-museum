@@ -1,8 +1,9 @@
 section
-	div.row
-		div.col-md-4
-			| Navigation bar
-		div.col-md-8
-		  - @exhibits.each do |exhibit|
-		  h2 = link_to exhibit.name, exhibit
+	div.container
+		div.row
+			div.col-md-2
+				| Navigation bar
+			div.col-md-8
+			  - @exhibits.each do |exhibit|
+			  	h2 = link_to exhibit.name, exhibit
 				
