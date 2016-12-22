@@ -1,0 +1,23 @@
+div.container
+	= simple_form_for(@exhibit) do |f|
+	  = f.error_notification
+
+	  = f.input :name
+	  = f.input :fond_group
+	  = f.input :section
+	  = f.input :collection_number
+	  = f.input :inventory_number
+	  = f.input :another_inv_num
+	  = f.input :photo_number
+	  = f.input :dating
+	  = f.input :material
+	  = f.input :size_or_weight
+	  = f.input :condition
+	  = f.input :date_of_renewal
+	  = f.input :storage_location
+	  = f.input :locality
+	  = f.input :museum_director
+	  = f.input :custodian
+	  = f.input :date_of_receipt
+	  = f.input :act_of_reception_num
+	  = f.button :submit

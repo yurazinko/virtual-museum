@@ -19,10 +19,10 @@ ActiveRecord::Schema.define(version: 20161215101311) do
     t.string   "name"
     t.string   "fond_group"
     t.string   "section"
-    t.integer  "collection_number"
-    t.integer  "inventory_number"
-    t.integer  "another_inv_num"
-    t.integer  "photo_number"
+    t.string   "collection_number"
+    t.string   "inventory_number"
+    t.string   "another_inv_num"
+    t.string   "photo_number"
     t.string   "dating"
     t.string   "material"
     t.string   "size_or_weight"
@@ -34,7 +34,8 @@ ActiveRecord::Schema.define(version: 20161215101311) do
     t.string   "museum_director"
     t.string   "custodian"
     t.string   "date_of_receipt"
-    t.integer  "act_of_reception_num"
+    t.string   "act_of_reception_num"
+    t.integer  "user_id"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
   end
@@ -53,10 +54,6 @@ ActiveRecord::Schema.define(version: 20161215101311) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "name"
-    t.string   "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string   "unconfirmed_email"
     t.integer  "role"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
