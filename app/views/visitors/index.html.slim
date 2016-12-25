@@ -1,0 +1,68 @@
+.brand Business Casual
+.address-bar 3481 Melrose Place | Beverly Hills, CA 90210 | 123.456.7890
+= render 'layouts/navigation'
+.container
+  .row
+    .box
+      .col-lg-12.text-center
+        #carousel-example-generic.carousel.slide
+          /! Indicators
+          ol.carousel-indicators.hidden-xs
+            li.active data-slide-to="0" data-target="#carousel-example-generic" 
+            li data-slide-to="1" data-target="#carousel-example-generic" 
+            li data-slide-to="2" data-target="#carousel-example-generic" 
+          /! Wrapper for slides
+          .carousel-inner
+            .item.active
+              img.img-responsive.img-full alt="" src="http://ironsummitmedia.github.io/startbootstrap-business-casual/img/slide-1.jpg" 
+            .item
+              img.img-responsive.img-full alt="" src="http://ironsummitmedia.github.io/startbootstrap-business-casual/img/slide-2.jpg" 
+            .item
+              img.img-responsive.img-full alt="" src="http://ironsummitmedia.github.io/startbootstrap-business-casual/img/slide-3.jpg" 
+          /! Controls
+          a.left.carousel-control data-slide="prev" href="#carousel-example-generic" 
+            span.icon-prev
+          a.right.carousel-control data-slide="next" href="#carousel-example-generic" 
+            span.icon-next
+        h2.brand-before
+          small Welcome to
+        h1.brand-name Business Casual
+        hr.tagline-divider
+        h2
+          small
+            | By
+            strong Start Bootstrap
+  .row
+    .box
+      .col-lg-12
+        hr
+        h2.intro-text.text-center
+          | Build a website
+          strong worth visiting
+        hr
+        img.img-responsive.img-border.img-left alt="" src="http://ironsummitmedia.github.io/startbootstrap-business-casual/img/intro-pic.jpg" 
+        hr.visible-xs
+        p The boxes used in this template are nested inbetween a normal Bootstrap row and the start of your column layout. The boxes will be full-width boxes, so if you want to make them smaller then you will need to customize.
+        p
+          | A huge thanks to
+          a href="http://join.deathtothestockphoto.com/" target="_blank"  Death to the Stock Photo
+          | for allowing us to use the beautiful photos that make this template really come to life. When using this template, make sure your photos are decent. Also make sure that the file size on your photos is kept to a minumum to keep load times to a minimum.
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+  .row
+    .box
+      .col-lg-12
+        hr
+        h2.intro-text.text-center
+          | Beautiful boxes
+          strong to showcase your content
+        hr
+        p Use as many boxes as you like, and put anything you want in them! They are great for just about anything, the sky's the limit!
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+/! /.container
+/! Script to Activate the Carousel
+javascript:
+   $(document).on('ready', function () {
+     $('.carousel').carousel({
+         interval: 3000 //changes the speed
+     })
+   });
