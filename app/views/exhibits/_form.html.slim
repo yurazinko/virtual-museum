@@ -1,24 +1,27 @@
 div.container
-	= simple_form_for(@exhibit) do |f|
-	  = f.error_notification
+	div.row
+		div.col-md-3
+		div.col-md-6
+			= simple_form_for(@exhibit) do |f|
+			  = f.error_notification
 
-	  = f.input :name
-	  = f.input :fond_group
-	  = f.input :section
-	  = f.input :collection_number
-	  = f.input :inventory_number
-	  = f.input :another_inv_num
-	  = f.input :photo_number
-	  = f.input :dating
-	  = f.input :material
-	  = f.input :size_or_weight
-	  = f.input :condition
-	  = f.input :renewal, as: :boolean
-	  = f.input :date_of_renewal
-	  = f.input :storage_location
-	  = f.input :locality
-	  = f.input :museum_director
-	  = f.input :custodian
-	  = f.input :date_of_receipt
-	  = f.input :act_of_reception_num
-	  = f.button :submit
+			  = f.input :name, label: 'Назва:'
+			  = f.input :fond_group, label: 'Фондова група:', collection: [ "Археологія", "Етнографія", "Історія", "Образотворче мистецтво", "Архів", "Нумізматика"], as: :radio_buttons, class: "form-inline"
+			  = f.input :section, label: 'Розділ:'
+			  = f.input :collection_number, label: 'Номер колекції:'
+			  = f.input :inventory_number, label: 'Інвентарний номер'
+			  = f.input :another_inv_num, label: 'Інший інвентарний номер'
+			  = f.input :photo_number, label: 'Номер фотографії'
+			  = f.input :dating, label: 'Датування'
+			  = f.input :material, label: 'Матеріал'
+			  = f.input :size_or_weight, label: 'Розмір/вага'  
+			  = f.input :condition, label: 'Стан'
+			  = f.input :renewal, as: :boolean, label: 'Реставрація/консервація'
+			  = f.input :date_of_renewal, label: 'Дата реставрації/консервації'
+			  = f.input :storage_location, label: 'Місце зберігання'
+			  = f.input :locality, label: 'Місце'
+			  = f.input :museum_director, label: 'Директор музею'
+			  = f.input :custodian, label: 'Зберігач фондів'
+			  = f.input :date_of_receipt, label: 'Дата прийому'
+			  = f.input :act_of_reception_num, label: 'Номер акту прийому'
+			  = f.button :submit, label: 'Зберегти'  
