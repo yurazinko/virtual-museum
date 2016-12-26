@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'annotate'
+gem 'carrierwave', '~> 1.0'
 group :development, :test do
   gem 'byebug', platform: :mri
 end

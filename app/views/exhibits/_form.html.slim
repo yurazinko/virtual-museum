@@ -6,11 +6,12 @@ div.container
 			  = f.error_notification
 
 			  = f.input :name, label: 'Назва:'
-			  = f.input :fond_group, label: 'Фондова група:', collection: [ "Археологія", "Етнографія", "Історія", "Образотворче мистецтво", "Архів", "Нумізматика"], as: :radio_buttons, class: "form-inline"
+			  = f.input :fond_group, label: 'Фондова група:', collection: [ "Археологія", "Етнографія", "Історія", "Образотворче мистецтво", "Архів", "Нумізматика"]
 			  = f.input :section, label: 'Розділ:'
 			  = f.input :collection_number, label: 'Номер колекції:'
 			  = f.input :inventory_number, label: 'Інвентарний номер'
 			  = f.input :another_inv_num, label: 'Інший інвентарний номер'
+			  = f.file_field :photo, label: 'Фото'
 			  = f.input :photo_number, label: 'Номер фотографії'
 			  = f.input :dating, label: 'Датування'
 			  = f.input :material, label: 'Матеріал'

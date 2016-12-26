@@ -3,3 +3,5 @@ section
 		div.row
 			div.col-md-3
 				h1.page-header = @exhibit.name
+			div.col-md-6
+				= image_tag @exhibit.photo.url
