@@ -190,3 +190,10 @@ footer p {
         clear: both;
     }
 }
+
+/**/
+
+.carousel-control {
+  padding-top:10%;
+  width:5%;
+}

@@ -1,0 +1,108 @@
+.brand Business Casual
+.address-bar 3481 Melrose Place | Beverly Hills, CA 90210 | 123.456.7890
+= render 'layouts/navigation'
+.container
+  .row
+    .box
+      .col-lg-12
+        hr/
+        h2.intro-text.text-center
+          | About
+          strong business casual
+        hr/
+      .col-md-6
+        img.img-responsive.img-border-left alt="" src="http://ironsummitmedia.github.io/startbootstrap-business-casual/img/slide-2.jpg" /
+      .col-md-6
+        p This is a great place to introduce your company or project and describe what you do.
+        p Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.
+        p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+      .clearfix
+  .row
+    .box
+      .col-lg-12
+        hr/
+        h2.intro-text.text-center
+          | Our
+          strong Team
+        hr/
+      .col-sm-4.text-center
+        img.img-responsive alt="" src="http://placehold.it/750x450" /
+        h3
+          | John Smith
+          small Job Title
+      .col-sm-4.text-center
+        img.img-responsive alt="" src="http://placehold.it/750x450" /
+        h3
+          | John Smith
+          small Job Title
+      .col-sm-4.text-center
+        img.img-responsive alt="" src="http://placehold.it/750x450" /
+        h3
+          | John Smith
+          small Job Title
+      .clearfix      
+/! /.container
+.container
+  .col-md-12
+    h1 Bootstrap 3 Thumbnail Slider
+    .well
+      #myCarousel.carousel.slide
+        /! Carousel items
+        .carousel-inner
+          .item.active
+            .row
+              .col-md-4
+                a href="#x" 
+                  img.img-responsive alt="Image" src="http://placehold.it/250x250" 
+              .col-md-4
+                a href="#x" 
+                  img.img-responsive alt="Image" src="http://placehold.it/250x250" 
+              .col-md-4
+                a href="#x" 
+                  img.img-responsive alt="Image" src="http://placehold.it/250x250" 
+            /! /row
+          /! /item
+          .item
+            .row
+              .col-md-4
+                a.thumbnail href="#x" 
+                  img.img-responsive alt="Image" src="http://placehold.it/250x250" 
+              .col-md-4
+                a.thumbnail href="#x" 
+                  img.img-responsive alt="Image" src="http://placehold.it/250x250" 
+              .col-md-4
+                a.thumbnail href="#x" 
+                  img.img-responsive alt="Image" src="http://placehold.it/250x250" 
+            /! /row
+          /! /item
+          .item
+            .row
+              .col-md-4
+                a.thumbnail href="#x" 
+                  img.img-responsive alt="Image" src="http://placehold.it/250x250" 
+              .col-md-4
+                a.thumbnail href="#x" 
+                  img.img-responsive alt="Image" src="http://placehold.it/250x250" 
+              .col-md-4
+                a.thumbnail href="#x" 
+                  img.img-responsive alt="Image" src="http://placehold.it/250x250" 
+            /! /row
+          /! /item
+        /! /carousel-inner
+        a.left.carousel-control data-slide="prev" href="#myCarousel"  ‹
+        a.right.carousel-control data-slide="next" href="#myCarousel"  ›
+      /! /myCarousel
+    /! /well
+javascript:
+  $(document).ready(function() {
+    $('#myCarousel').carousel({
+    interval: 5000
+    })
+      
+      $('#myCarousel').on('slid.bs.carousel', function() {
+        //alert("slid");
+    });
+      
+      
+  });
+
