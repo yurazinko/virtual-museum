@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20161226153210) do
 
   create_table "exhibits", force: :cascade do |t|
     t.string   "name"
+    t.text     "description"
     t.string   "fond_group"
     t.string   "section"
     t.string   "collection_number"

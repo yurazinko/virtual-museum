@@ -7,6 +7,7 @@ div.container
 
 			  = f.input :name, label: 'Назва:'
 			  = f.input :fond_group, label: 'Фондова група:', collection: [ "Археологія", "Етнографія", "Історія", "Образотворче мистецтво", "Архів", "Нумізматика"]
+			  = f.input :description, :input_html => {:style=> 'height: 200px'}, label: 'Опис:'
 			  = f.input :section, label: 'Розділ:'
 			  = f.input :collection_number, label: 'Номер колекції:'
 			  = f.input :inventory_number, label: 'Інвентарний номер'
@@ -20,7 +21,7 @@ div.container
 			  = f.input :renewal, as: :boolean, label: 'Реставрація/консервація'
 			  = f.input :date_of_renewal, label: 'Дата реставрації/консервації'
 			  = f.input :storage_location, label: 'Місце зберігання'
-			  = f.input :locality, label: 'Місце'
+			  = f.input :locality, label: 'Місцевість'
 			  = f.input :museum_director, label: 'Директор музею'
 			  = f.input :custodian, label: 'Зберігач фондів'
 			  = f.input :date_of_receipt, label: 'Дата прийому'

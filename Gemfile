@@ -10,6 +10,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'annotate'
 gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
+gem 'jquery-ui-rails'
 group :development, :test do
   gem 'byebug', platform: :mri
 end
