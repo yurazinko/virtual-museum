@@ -6,6 +6,7 @@ div.container
 			  = f.error_notification
 
 			  = f.input :name, label: 'Назва:'
+			  = f.collection_select :group_id, Group.order(:name), :id, :name, label: 'Фондова група:'
 			  = f.input :description, :input_html => {:style=> 'height: 200px'}, label: 'Опис:'
 			  = f.input :section, label: 'Розділ:'
 			  = f.input :collection_number, label: 'Номер колекції:'
