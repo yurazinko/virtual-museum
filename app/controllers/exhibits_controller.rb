@@ -57,7 +57,7 @@ class ExhibitsController < ApplicationController
 		params[:exhibit].permit(:name, :fond_group, :description, :section, 
 			:collection_number, :inventory_number,
 		 	:another_inv_num,:photo, :photo_number, :dating, :material, 
-		 	:size_or_weight, :condition, :renewal, :date_of_renewal, 
+		 	:size_or_weight, :condition, :renewal, :date_of_renewal, :coordinates, :notes,
 		 	:storage_location, :locality, :museum_director, :custodian, 
 		 	:date_of_receipt, :act_of_reception_num)
 	end

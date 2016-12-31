@@ -17,8 +17,10 @@ class CreateExhibits < ActiveRecord::Migration[5.0]
       t.string :date_of_renewal
       t.string :storage_location
       t.string :locality
+      t.string :coordinates
       t.string :museum_director
       t.string :custodian
+      t.text   :notes
       t.string :date_of_receipt
       t.string :act_of_reception_num
       t.integer :user_id
