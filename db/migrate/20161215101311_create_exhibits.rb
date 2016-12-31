@@ -3,7 +3,6 @@ class CreateExhibits < ActiveRecord::Migration[5.0]
     create_table :exhibits do |t|
       t.string :name
       t.text   :description
-      t.string :fond_group
       t.string :section
       t.string :collection_number
       t.string :inventory_number

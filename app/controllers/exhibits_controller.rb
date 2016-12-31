@@ -54,7 +54,7 @@ class ExhibitsController < ApplicationController
 	end
 
 	def page_params
-		params[:exhibit].permit(:name, :fond_group, :description, :section, 
+		params[:exhibit].permit(:name, :description, :section, 
 			:collection_number, :inventory_number,
 		 	:another_inv_num,:photo, :photo_number, :dating, :material, 
 		 	:size_or_weight, :condition, :renewal, :date_of_renewal, :coordinates, :notes,

@@ -6,7 +6,6 @@ div.container
 			  = f.error_notification
 
 			  = f.input :name, label: 'Назва:'
-			  = f.input :fond_group, label: 'Фондова група:', collection: [ "Археологія", "Етнографія", "Історія", "Образотворче мистецтво", "Архів", "Нумізматика"]
 			  = f.input :description, :input_html => {:style=> 'height: 200px'}, label: 'Опис:'
 			  = f.input :section, label: 'Розділ:'
 			  = f.input :collection_number, label: 'Номер колекції:'
