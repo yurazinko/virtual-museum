@@ -1,5 +1,5 @@
 class ExhibitsController < ApplicationController
-	#layout "application"
+
 	before_action :find_exhibit, only: [:edit, :update, :show, :destroy]
 	before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 	before_action :only_author!, only: [:edit, :update, :destroy]
@@ -10,6 +10,7 @@ class ExhibitsController < ApplicationController
 
 	def create
 		@exhibit = Exhibit.new(page_params)
+		@exhibit.group_id = params[:group_id]
 		@exhibit.user = current_user
 		if @exhibit.save
 			redirect_to exhibits_path

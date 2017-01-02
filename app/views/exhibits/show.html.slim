@@ -3,5 +3,6 @@ section
     div.row
       div.col-md-3
         h1.page-header = @exhibit.name
+        = link_to @exhibit.group.name, @exhibit.group
       div.col-md-6
         = image_tag @exhibit.photo.url if @exhibit.photo?

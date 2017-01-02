@@ -1,0 +1,14 @@
+div.container
+  div.row
+    h3 
+      = @group.name
+    div.col-md-3
+      h4 Nav tree
+      = render 'shared/submenu'
+    div.col-md-9
+      - @exhibits.each do |exh|
+        div.exhibit-preview
+          h4
+            = link_to exh.name, exh
+          p
+            = exh.description   

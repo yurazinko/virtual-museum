@@ -52,6 +52,8 @@ GEM
       rails (>= 4.2, < 5.1)
       sass-rails (~> 5.0)
       selectize-rails (~> 0.6)
+    ancestry (2.2.2)
+      activerecord (>= 3.0.0)
     annotate (2.6.5)
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
@@ -300,6 +302,7 @@ PLATFORMS
 
 DEPENDENCIES
   administrate
+  ancestry
   annotate
   bootstrap-sass
   bourbon

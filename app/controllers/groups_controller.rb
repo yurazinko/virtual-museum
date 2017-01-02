@@ -6,6 +6,7 @@ class GroupsController < ApplicationController
 	end
 
 	def show
+		@exhibits = Exhibit.where(group_id: [@group.subtree_ids])
 	end
 
 	def new
@@ -44,6 +45,6 @@ class GroupsController < ApplicationController
 	end
 
 	def group_params
-		params.require(:group).permit(:name, :description)
+		params.require(:group).permit(:name, :parent_id, :description)
 	end
 end

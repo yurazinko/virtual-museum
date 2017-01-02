@@ -1,0 +1,5 @@
+ul.nav.nav-pills.nav-stacked.nested_nav
+  - groups.each do |group, children|
+    li.nav-item
+      = link_to group.name, group, class: "nav-link #{'active' if current_page?(group_path(group))}"
+      = render 'shared/submenu_groups', groups: children if children.present?

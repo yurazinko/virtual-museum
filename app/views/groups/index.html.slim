@@ -1,7 +1,10 @@
-.container
-  .row
+div.container
+  div.row
     h3 Fond groups
-    .column
+    div.col-md-3
+      h4 Nav tree
+      = render 'shared/submenu'
+    div.col-md-6
       table.table
         tbody
           - @groups.each do |group|
@@ -10,6 +13,8 @@
 								= link_to group.name, group
 							td
 							  = group.description
+							td
+							  = group.parent.name if group.parent.present?
 							td
 							  = link_to 'Edit', edit_group_path(group), class: 'btn btn-default' 
 							td
