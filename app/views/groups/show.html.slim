@@ -11,4 +11,6 @@ div.container
           h4
             = link_to exh.name, exh
           p
-            = exh.description   
+            = exh.description
+          div
+            = image_tag exh.photo.url(:thumb) if exh.photo?     

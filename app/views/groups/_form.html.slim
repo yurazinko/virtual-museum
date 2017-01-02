@@ -6,6 +6,6 @@ div.container
 			  = f.error_notification
 
 			  = f.input :name, label: 'Назва:'
-			  = f.collection_select :parent_id, Group.where("id != #{@group.id}").order(:name), :id, :name, label: 'Фондова група:'
+			  = f.collection_select :parent_id, Group.where("id != #{@group.id}").order(:name), :id, :name, {include_blank: true}, label: 'Фондова група:'
 			  = f.input :description, label: 'Опис'
 			  = f.button :submit, label: 'Зберегти'  

@@ -1,4 +1,14 @@
 div.container
 	h1
 		| New Group
-= render 'form'
+div.container
+	div.row
+		div.col-md-3
+		div.col-md-6
+			= simple_form_for(@group) do |f|
+			  = f.error_notification
+
+			  = f.input :name, label: 'Назва:'
+			  = f.collection_select :parent_id, Group.order(:name), :id, :name, {include_blank: true}, label: 'Фондова група:'
+			  = f.input :description, label: 'Опис'
+			  = f.button :submit, label: 'Зберегти'  
