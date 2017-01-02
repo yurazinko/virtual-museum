@@ -11,4 +11,5 @@ div.container
 			  = f.input :name, label: 'Назва:'
 			  = f.collection_select :parent_id, Group.order(:name), :id, :name, {include_blank: true}, label: 'Фондова група:'
 			  = f.input :description, label: 'Опис'
+			  = f.file_field :photo, label: 'Фото'
 			  = f.button :submit, label: 'Зберегти'  

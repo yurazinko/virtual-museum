@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
 	before_action :set_group, only: [:show, :edit, :update, :destroy]
 
 	def index
-		@groups = Group.all
+		@groups = Group.roots
 	end
 
 	def show
@@ -45,6 +45,6 @@ class GroupsController < ApplicationController
 	end
 
 	def group_params
-		params.require(:group).permit(:name, :parent_id, :description)
+		params.require(:group).permit(:name, :parent_id, :photo, :description)
 	end
 end

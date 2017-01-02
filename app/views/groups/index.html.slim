@@ -2,20 +2,18 @@ div.container
   div.row
     h3 Fond groups
     div.col-md-3
-      h4 Nav tree
       = render 'shared/submenu'
-    div.col-md-6
+    div.col-md-9
       table.table
         tbody
           - @groups.each do |group|
-            tr
-							td
-								= link_to group.name, group
-							td
-							  = group.description
-							td
-							  = group.parent.name if group.parent.present?
-							td
-							  = link_to 'Edit', edit_group_path(group), class: 'btn btn-default' 
-							td
-							  = link_to 'Delete', group_path(group), method: :delete, confirm: 'Are you sure?', class: 'btn btn-danger'
+            div.photo-preview
+              = image_tag group.photo.url(:thumb) if group.photo?
+              h4
+                = link_to group.name, group
+              p  
+                = group.description
+              p  
+                = group.parent.name if group.parent.present?
+                = link_to 'Edit', edit_group_path(group), class: 'btn btn-default' 
+                = link_to 'Delete', group_path(group), method: :delete, confirm: 'Are you sure?', class: 'btn btn-danger'
