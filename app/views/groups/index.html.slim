@@ -25,6 +25,39 @@ div.container
       #myCarousel.carousel.slide
         /! Carousel items
         .carousel-inner
+          - @groups.each do |group|
+            div.item
+              a href="#{group_path(group)}" 
+                = image_tag group.photo.url(:thumb) if group.photo?
+                h4
+                  = group.name
+        a.left.carousel-control data-slide="prev" href="#myCarousel"  ‹
+        a.right.carousel-control data-slide="next" href="#myCarousel"  ›         
+                
+
+javascript:
+
+  $(document).ready(function() {
+    $('.item:first').addClass('active');
+    $('#myCarousel').carousel({
+    interval: 2000
+    })
+      
+      $('#myCarousel').on('slid.bs.carousel', function() {
+        //alert("slid");
+    });
+  });
+
+  $('.item').click(function(){
+    $('.item').removeClass('active');
+  });
+/div.container
+  div.col-md-12
+    h1 Bootstrap 3 Thumbnail Slider
+    div.well
+      #myCarousel.carousel.slide
+        /! Carousel items
+        .carousel-inner
           div.item
             .row
               .col-md-4
@@ -48,17 +81,4 @@ div.container
                 a. href="#x" 
                   img.img-responsive alt="Image" src="http://placehold.it/250x250"                  
         a.left.carousel-control data-slide="prev" href="#myCarousel"  ‹
-        a.right.carousel-control data-slide="next" href="#myCarousel"  ›                  
-
-javascript:
-
-  $(document).ready(function() {
-    $('.item:first').addClass('active');
-    $('#myCarousel').carousel({
-    interval: 2000
-    })
-      
-      $('#myCarousel').on('slid.bs.carousel', function() {
-        //alert("slid");
-    });
-  });
+        a.right.carousel-control data-slide="next" href="#myCarousel"  ›     
