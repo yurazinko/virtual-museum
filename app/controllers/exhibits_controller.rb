@@ -1,6 +1,6 @@
 class ExhibitsController < ApplicationController
 
-	before_action :find_exhibit, only: [:edit, :update, :show, :destroy]
+	before_action :find_exhibit, only: [:show, :edit, :update, :destroy]
 	before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 	before_action :only_author!, only: [:edit, :update, :destroy]
 
@@ -10,7 +10,7 @@ class ExhibitsController < ApplicationController
 
 	def create
 		@exhibit = Exhibit.new(page_params)
-		@exhibit.group_id = params[:group_id]
+	#	@exhibit.group_id = params[:group_id]
 		@exhibit.user = current_user
 		if @exhibit.save
 			redirect_to exhibits_path
@@ -46,7 +46,7 @@ class ExhibitsController < ApplicationController
 		end
 	end
 
-	protected
+	private
 
 	def only_author!
 		unless @exhibit.user == current_user
@@ -57,7 +57,7 @@ class ExhibitsController < ApplicationController
 	def page_params
 		params[:exhibit].permit(:name, :group_id, :description, :section, 
 			:collection_number, :inventory_number,
-		 	:another_inv_num,:photo, :photo_number, :dating, :material, 
+		 	:another_inv_num, :photo, :photo_number, :dating, :material, 
 		 	:size_or_weight, :condition, :renewal, :date_of_renewal, :coordinates, :notes,
 		 	:storage_location, :locality, :museum_director, :custodian, 
 		 	:date_of_receipt, :act_of_reception_num)

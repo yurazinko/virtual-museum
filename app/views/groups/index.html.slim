@@ -1,24 +1,4 @@
 div.container
-  div.row
-    h3 Fond groups
-    div.col-md-3
-      = render 'shared/submenu'
-    div.col-md-9
-      table.table
-        tbody
-          - @groups.each do |group|
-            div.photo-preview
-              h4
-                = link_to group.name, group
-              div
-                = image_tag group.photo.url(:thumb) if group.photo?  
-              p  
-                = group.description
-              p  
-                = group.parent.name if group.parent.present?
-                = link_to 'Edit', edit_group_path(group), class: 'btn btn-default' 
-                = link_to 'Delete', group_path(group), method: :delete, confirm: 'Are you sure?', class: 'btn btn-danger'
-div.container
   div.col-md-12
     h1 Bootstrap 3 Thumbnail Slider
     div.well
@@ -31,6 +11,10 @@ div.container
                 = image_tag group.photo.url(:thumb) if group.photo?
                 h4
                   = group.name
+                p  
+                  = group.description
+                = link_to 'Edit', edit_group_path(group), class: 'btn btn-default' 
+                = link_to 'Delete', group_path(group), method: :delete, confirm: 'Are you sure?', class: 'btn btn-danger'  
         a.left.carousel-control data-slide="prev" href="#myCarousel"  ‹
         a.right.carousel-control data-slide="next" href="#myCarousel"  ›         
                 
