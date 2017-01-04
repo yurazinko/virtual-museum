@@ -11,7 +11,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   
-  has_many :exhibits, dependent: :destroy
+  has_many :exhibits
+  has_many :groups
   
 #  validates :name, presence: true
 

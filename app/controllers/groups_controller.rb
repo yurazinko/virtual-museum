@@ -1,5 +1,7 @@
 class GroupsController < ApplicationController
 	before_action :set_group, only: [:show, :edit, :update, :destroy]
+	before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+	before_action :only_author!, only: [:edit, :update, :destroy]
 
 	def index
 		@groups = Group.roots
@@ -15,6 +17,7 @@ class GroupsController < ApplicationController
 
 	def create
 		@group = Group.new(group_params)
+		@group.user_id = current_user.id
 		if @group.save
 			redirect_to groups_path
 		else
