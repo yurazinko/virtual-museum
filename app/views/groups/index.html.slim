@@ -1,6 +1,6 @@
 div.container
   div.col-md-12
-    h1 Bootstrap 3 Thumbnail Slider
+    /h1 Bootstrap 3 Thumbnail Slider
     div.well
       #myCarousel.carousel.slide
         /! Carousel items
@@ -8,13 +8,16 @@ div.container
           - @groups.each do |group|
             div.item
               a href="#{group_path(group)}" 
-                = image_tag group.photo.url(:thumb) if group.photo?
-                h4
-                  = group.name
-                p  
-                  = group.description
-                = link_to 'Edit', edit_group_path(group), class: 'btn btn-default' 
-                = link_to 'Delete', group_path(group), method: :delete, confirm: 'Are you sure?', class: 'btn btn-danger'  
+                div.col-md-2
+                div.col-md-4
+                  = image_tag group.photo.url(:thumb), class: 'img-rounded' if group.photo?
+                div.col-md-3  
+                  h4
+                    = group.name
+                  p  
+                    = group.description
+                = link_to 'Edit', edit_group_path(group), class: 'btn btn-default' if user_signed_in?
+                = link_to 'Delete', group_path(group), method: :delete, confirm: 'Are you sure?', class: 'btn btn-danger' if user_signed_in?
         a.left.carousel-control data-slide="prev" href="#myCarousel"  ‹
         a.right.carousel-control data-slide="next" href="#myCarousel"  ›         
                 

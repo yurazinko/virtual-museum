@@ -1,5 +1,4 @@
 class ExhibitsController < ApplicationController
-
 	before_action :find_exhibit, only: [:show, :edit, :update, :destroy]
 	before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 	before_action :only_author!, only: [:edit, :update, :destroy]

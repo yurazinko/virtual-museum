@@ -181,6 +181,14 @@ footer p {
         table-layout: fixed;
         font-size: 1.25em;
     }
+
+    .exhibit-preview{
+        width: 45%;
+        float: left;
+        padding: 10px;
+        margin: 10px;
+        border: 1px solid blue;
+    }
 }
 
 @media screen and (min-width:1200px) {
@@ -189,6 +197,10 @@ footer p {
         display: table;
         clear: both;
     }
+
+    a.nav-link.tree {
+        padding: 10px;  
+    }
 }
 
 /**/
@@ -196,4 +208,8 @@ footer p {
 .carousel-control {
   padding-top:10%;
   width:5%;
+}
+
+a.nav-link.tree.active {
+    border: 1px solid blue;
 }

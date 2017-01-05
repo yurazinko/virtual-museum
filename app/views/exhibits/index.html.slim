@@ -4,6 +4,13 @@ section
 			div.col-md-2
 				| Navigation bar
 			div.col-md-8
-			  - @exhibits.each do |exhibit|
-			  	h2 = link_to exhibit.name, exhibit
+        - @exhibits.each do |exh|
+          a href="#{exhibit_path(exh)}"
+            div.exhibit-preview
+              h4
+                = link_to exh.name, exh
+              p
+                = exh.description
+              div
+                = image_tag exh.photo.url(:thumb) if exh.photo? 
 				

@@ -4,3 +4,11 @@
 .nested_nav {
 	margin-left: 10px;
 }
+
+a {
+	.nav-link{
+		.tree {
+			padding: 0;
+		}
+	}
+}

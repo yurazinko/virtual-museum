@@ -2,7 +2,10 @@ section
   div.container
     div.row
       div.col-md-3
-        h1.page-header = @exhibit.name
-        = link_to @exhibit.group.name, @exhibit.group
+        h4 = @exhibit.name
+        p == "Фондова група: #{link_to @exhibit.group.name, @exhibit.group}"
+      div.col-md-3
+        p = "Розділ: #{@exhibit.section}"   
       div.col-md-6
         = image_tag @exhibit.photo.url if @exhibit.photo?
+      iframe frameborder="0" height="400" marginheight="0" marginwidth="0" scrolling="no" src="https://www.google.com.ua/maps/@49.8470015,23.6603172,16z"  

@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
 	before_action :set_group, only: [:show, :edit, :update, :destroy]
-	before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+	before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 	before_action :only_author!, only: [:edit, :update, :destroy]
 
 	def index
@@ -45,6 +45,12 @@ class GroupsController < ApplicationController
 
 	def set_group
 		@group = Group.find(params[:id])
+	end
+
+	def only_author!
+		unless @group.user_id == current_user.id
+			redirect_to groups_path, flash: {error: 'Only author can update exhibit'}
+		end
 	end
 
 	def group_params
