@@ -186,8 +186,33 @@ footer p {
         width: 45%;
         float: left;
         padding: 10px;
-        margin: 10px;
+        margin: 0px 10px 10px 10px;
         border: 1px solid blue;
+    }
+
+    .group-description-block{
+        border: 1px solid brown;
+        height: 22em;
+    }
+    
+    .group-description-block p {
+        font-size: 0.9em;
+    }
+
+    .group-photo-block{
+        margin-top: 6em;
+    }
+
+    .edit-buttons{
+        margin-top: 5em;
+    }
+
+    .glyphicon {
+        margin-left: 10px;
+    }
+
+    .glyphicon:hover {
+        text-decoration: none;
     }
 }
 

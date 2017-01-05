@@ -7,30 +7,35 @@ div.container
         .carousel-inner
           - @groups.each_with_index do |group, i|
             div.item
-              a href="#{group_path(group)}" 
+              a href="#{group_path(group)}"
                 div.col-md-3
                   p
                     = @groups[i-1].name
-                div.col-md-3
+                div.group-photo-block.col-md-3
                   = image_tag group.photo.url(:thumb), class: 'img-rounded' if group.photo?
-                div.col-md-3  
+
+                div.group-description-block.col-md-3  
                   h4
                     = group.name
                   p  
                     = group.description
                   p
                     = "#{i+1}/#{@groups.size}"
-
-                  = link_to 'Edit', edit_group_path(group), class: 'btn btn-default' if user_signed_in?
-                  
-                  = link_to 'Delete', group_path(group), method: :delete, confirm: 'Are you sure?', class: 'btn btn-danger' if user_signed_in?
-                      
                 div.col-md-3
                   p
-                    = @groups[next_element(i)].name 
+                    = @groups[next_element(i)].name
+              br
+              div.edit-buttons
+                = link_to '', new_group_path, class: 'glyphicon glyphicon-plus' if user_signed_in?
+                br
+                br      
+                = link_to '', edit_group_path(group), class: 'glyphicon glyphicon-pencil' if user_signed_in?
+                br
+                br
+                = link_to '', group_path(group), method: :delete, data: { confirm: "Ви впевнені, що хочете видалити фондову групу #{group.name}? Цю дію неможливо буде скасувати."}, class: 'glyphicon glyphicon-remove' if user_signed_in?      
                
-        a.left.carousel-control data-slide="prev" href="#myCarousel"  ‹
-        a.right.carousel-control data-slide="next" href="#myCarousel"  ›         
+        a.left.carousel-control.glyphicon.glyphicon-circle-arrow-left data-slide="prev" href="#myCarousel"
+        a.right.carousel-control.glyphicon.glyphicon-circle-arrow-right data-slide="next" href="#myCarousel"         
                 
 
 javascript:
@@ -38,7 +43,7 @@ javascript:
   $(document).ready(function() {
     $('.item:first').addClass('active');
     $('#myCarousel').carousel({
-    interval: 2000
+    interval: 2000000
     })
       
       $('#myCarousel').on('slid.bs.carousel', function() {
@@ -48,6 +53,7 @@ javascript:
 
   $('.item').click(function(){
     $('.item').removeClass('active');
+    $('.item:first').addClass('active');
   });
 /div.container
   div.col-md-12
