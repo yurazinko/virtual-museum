@@ -32,7 +32,7 @@ div.container
                 = link_to '', edit_group_path(group), class: 'glyphicon glyphicon-pencil' if user_signed_in?
                 br
                 br
-                = link_to '', group_path(group), method: :delete, data: { confirm: "Ви впевнені, що хочете видалити фондову групу #{group.name}? Цю дію неможливо буде скасувати."}, class: 'glyphicon glyphicon-remove' if user_signed_in?      
+                = link_to '', group_path(group), method: :delete, data: { confirm: "Ви впевнені, що хочете видалити фондову групу #{group.name}? Цю дію неможливо буде скасувати."}, class: 'glyphicon glyphicon-trash' if user_signed_in?      
                
         a.left.carousel-control.glyphicon.glyphicon-circle-arrow-left data-slide="prev" href="#myCarousel"
         a.right.carousel-control.glyphicon.glyphicon-circle-arrow-right data-slide="next" href="#myCarousel"         
@@ -43,7 +43,7 @@ javascript:
   $(document).ready(function() {
     $('.item:first').addClass('active');
     $('#myCarousel').carousel({
-    interval: 2000000
+    interval: 2000
     })
       
       $('#myCarousel').on('slid.bs.carousel', function() {

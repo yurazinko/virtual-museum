@@ -1,11 +1,53 @@
-section	
-  div.container
-    div.row
-      div.col-md-3
-        h4 = @exhibit.name
-        p == "Фондова група: #{link_to @exhibit.group.name, @exhibit.group}"
-      div.col-md-3
-        p = "Розділ: #{@exhibit.section}"   
-      div.col-md-6
-        = image_tag @exhibit.photo.url if @exhibit.photo?
-      iframe frameborder="0" height="400" marginheight="0" marginwidth="0" scrolling="no" src="https://www.google.com.ua/maps/@49.8470015,23.6603172,16z"  
+div.container
+  div.row
+    div.col-md-3
+      p.exh-field == "Фондова група: "
+      p = link_to @exhibit.group.name, @exhibit.group
+    div.col-md-6.text-center
+      h4 = @exhibit.name
+  div.row
+    div.col-md-3
+      p.exh-field = "Розділ: "
+      p = @exhibit.section
+      p.exh-field = "Матеріал: "
+      p = @exhibit.material
+      p.exh-field = "Стан збереження:"
+      p = @exhibit.condition
+      p.exh-field = "Місце зберігання: "
+      p = @exhibit.storage_location
+      p.exh-field = "Інвентарний номер: "
+      p = @exhibit.inventory_number
+    div.col-md-3
+      p.exh-field = "Датування: "
+      p = @exhibit.dating
+      p.exh-field = "Розмір/вага: "
+      p = @exhibit.size_or_weight
+      p.exh-field = "Консервація/реставрація: "
+      - if @exhibit.renewal == true
+        p.glyphicon.glyphicon-ok
+      - else 
+        p.glyphicon.glyphicon-minus
+      p.exh-field = "Дата реставрації/консервації: "  
+      - if @exhibit.renewal == true  
+        p = @exhibit.date_of_renewal
+      - else
+      	p.glyphicon.glyphicon-minus  
+      p.exh-field = "Номер колекції: "
+      p = @exhibit.collection_number     
+    div.col-md-6
+      = image_tag @exhibit.photo.url if @exhibit.photo?
+  div.row
+    div.col-md-2
+      
+    div.col-md-2
+
+    div.col-md-2
+      p = "Інші інвентарні номери: #{@exhibit.another_inv_num}"
+    div.col-md-2
+      p = "Номер фотографії: #{@exhibit.photo_number}"
+    div.col-md-2
+      p = "Дата надходження: #{@exhibit.date_of_receipt}"  
+    div.col-md-2
+      p = "Номер акту прийому: #{@exhibit.act_of_reception_num}"        
+
+ 

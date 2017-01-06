@@ -238,3 +238,16 @@ footer p {
 a.nav-link.tree.active {
     border: 1px solid blue;
 }
+
+.exh-field {
+    margin: 13px 0 0 0;
+    color: darkgray;
+    font-size: 0.9em;
+}
+
+select#exhibit_group_id, select#group_parent_id {
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    background-color: white;
+}

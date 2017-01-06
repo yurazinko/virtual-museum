@@ -6,13 +6,19 @@ div.container
 			  = f.error_notification
 
 			  = f.input :name, label: 'Назва:'
+			  = f.label 'Фондова група: '
+			  br
 			  = f.collection_select :group_id, Group.order(:name), :id, :name, label: 'Фондова група:'
+			  br
+			  br
 			  = f.input :description, :input_html => {:style=> 'height: 200px'}, label: 'Опис:'
 			  = f.input :section, label: 'Розділ:'
 			  = f.input :collection_number, label: 'Номер колекції:'
 			  = f.input :inventory_number, label: 'Інвентарний номер'
 			  = f.input :another_inv_num, label: 'Інший інвентарний номер'
+			  = f.label "Фото: "
 			  = f.file_field :photo, label: 'Фото'
+			  br
 			  = f.input :photo_number, label: 'Номер фотографії'
 			  = f.input :dating, label: 'Датування'
 			  = f.input :material, label: 'Матеріал'
@@ -27,5 +33,13 @@ div.container
 			  = f.input :custodian, label: 'Зберігач фондів'
 			  = f.input :date_of_receipt, label: 'Дата прийому'
 			  = f.input :act_of_reception_num, label: 'Номер акту прийому'
-			  = f.input :notes, label: 'Примітки'
-			  = f.button :submit, label: 'Зберегти'  
+			  = f.input :notes, label: 'Примітки', :input_html => {:style=> 'height: 200px'}
+			  = f.button :submit, value: 'Зберегти'
+
+javascript:
+  $(function(){
+    $('.exhibit_date_of_renewal').hide()
+    $('#exhibit_renewal').click(function(){
+      $('.exhibit_date_of_renewal').toggle('fast');
+    })	
+  })

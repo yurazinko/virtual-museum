@@ -1,12 +1,23 @@
 div.container
 	div.row
 		div.col-md-3
+		div.col-md-6.text-center
+		  h3
+		    | Редагувати фондову групу
+div.container
+	div.row
+		div.col-md-3
 		div.col-md-6
 			= simple_form_for(@group) do |f|
 			  = f.error_notification
 
 			  = f.input :name, label: 'Назва:'
-			  = f.collection_select :parent_id, Group.where("id != #{@group.id}").order(:name), :id, :name, {include_blank: true}, label: 'Фондова група:'
+			  = f.label 'Батьківська фондова група: '
+			  = f.collection_select :parent_id, Group.where("id != #{@group.id}").order(:name), :id, :name, {include_blank: true}
+			  br
+			  br
 			  = f.input :description, label: 'Опис'
-			  = f.file_field :photo, label: 'Фото'
-			  = f.button :submit, label: 'Зберегти'  
+			  = f.label 'Фото'
+			  = f.file_field :photo
+			  br
+			  = f.button :submit, value: 'Зберегти'  
