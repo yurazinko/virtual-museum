@@ -38,8 +38,10 @@ div.container
 
 javascript:
   $(function(){
-    $('.exhibit_date_of_renewal').hide()
-    $('#exhibit_renewal').click(function(){
-      $('.exhibit_date_of_renewal').toggle('fast');
-    })	
+    if (window.location.href.slice(-3) === 'new') {
+      $('.exhibit_date_of_renewal').hide()
+      $('#exhibit_renewal').click(function(){
+        $('.exhibit_date_of_renewal').toggle('fast');
+      })
+    }	
   })
