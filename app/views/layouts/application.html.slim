@@ -5,6 +5,7 @@ html
     meta content="width=device-width, initial-scale=1.0" name="viewport" /
     title= content_for?(:title) ? yield(:title) : "My Application"
     meta content=("#{content_for?(:description) ? yield(:description) : "My Applicatio2n"}") name="description" /
+    script async="" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChJvkG27cUdouHAr4iqFQi6WxF_G5eoZI&libraries=places&v=3" type="text/javascript"
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags

@@ -28,6 +28,7 @@ div.container
 			  = f.input :date_of_renewal, label: 'Дата реставрації/консервації'
 			  = f.input :storage_location, label: 'Місце зберігання'
 			  = f.input :locality, label: 'Місцевість'
+			  = f.input :address, label: 'Aдреса (тест)'
 			  = f.input :coordinates, label: 'GPS'
 			  = f.input :museum_director, label: 'Директор музею'
 			  = f.input :custodian, label: 'Зберігач фондів'
@@ -35,7 +36,7 @@ div.container
 			  = f.input :act_of_reception_num, label: 'Номер акту прийому'
 			  = f.input :notes, label: 'Примітки', :input_html => {:style=> 'height: 200px'}
 			  = f.button :submit, value: 'Зберегти'
-
+    div#gmaps-error
 javascript:
   $(function(){
     if (window.location.href.slice(-3) === 'new') {

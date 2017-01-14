@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.geocomplete.min.js
+//= require gmap-init.js
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require jquery-ui/widgets/datepicker

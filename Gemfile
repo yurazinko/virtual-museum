@@ -13,6 +13,7 @@ gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem 'jquery-ui-rails'
 gem 'ancestry'
+gem 'geocoder'
 group :development, :test do
   gem 'byebug', platform: :mri
 end

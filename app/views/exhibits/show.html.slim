@@ -36,18 +36,17 @@ div.container
       p = @exhibit.collection_number     
     div.col-md-6
       = image_tag @exhibit.photo.url if @exhibit.photo?
+      div#exhibit_map
   div.row
     div.col-md-2
       
     div.col-md-2
 
     div.col-md-2
-      p = "Інші інвентарні номери: #{@exhibit.another_inv_num}"
+      p = @exhibit.latitude
     div.col-md-2
       p = "Номер фотографії: #{@exhibit.photo_number}"
     div.col-md-2
       p = "Дата надходження: #{@exhibit.date_of_receipt}"  
     div.col-md-2
       p = "Номер акту прийому: #{@exhibit.act_of_reception_num}"        
-
- 
