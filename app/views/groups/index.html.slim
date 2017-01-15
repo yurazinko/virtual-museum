@@ -9,9 +9,9 @@ div.container
             div.item
               a href="#{group_path(group)}"
                 div.col-md-3
-                  p.pr-group-title
+                  div.pr-group-title
                     = @groups[i-1].name
-                  = image_tag @groups[i-1].photo.url(:small)
+                  = image_tag @groups[i-1].photo.url(:small), class: 'prev-group-img'
                 div.group-photo-block.col-md-3
                   = image_tag group.photo.url(:thumb), class: 'img-rounded' if group.photo?
 
@@ -44,7 +44,7 @@ javascript:
   $(document).ready(function() {
     $('.item:first').addClass('active');
     $('#myCarousel').carousel({
-    interval: 2000000
+    interval: 2000
     })
       
       $('#myCarousel').on('slid.bs.carousel', function() {
