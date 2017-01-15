@@ -9,8 +9,9 @@ div.container
             div.item
               a href="#{group_path(group)}"
                 div.col-md-3
-                  p
+                  p.pr-group-title
                     = @groups[i-1].name
+                  = image_tag @groups[i-1].photo.url(:small)
                 div.group-photo-block.col-md-3
                   = image_tag group.photo.url(:thumb), class: 'img-rounded' if group.photo?
 
@@ -22,7 +23,7 @@ div.container
                   p
                     = "#{i+1}/#{@groups.size}"
                 div.col-md-3
-                  p
+                  p.pr-nxt-group
                     = @groups[next_element(i)].name
               br
               div.edit-buttons
@@ -34,8 +35,8 @@ div.container
                 br
                 = link_to '', group_path(group), method: :delete, data: { confirm: "Ви впевнені, що хочете видалити фондову групу #{group.name}? Цю дію неможливо буде скасувати."}, class: 'glyphicon glyphicon-trash' if user_signed_in?      
                
-        a.left.carousel-control.glyphicon.glyphicon-circle-arrow-left data-slide="prev" href="#myCarousel"
-        a.right.carousel-control.glyphicon.glyphicon-circle-arrow-right data-slide="next" href="#myCarousel"         
+        a.left.carousel-control data-slide="prev" href="#myCarousel"
+        a.right.carousel-control data-slide="next" href="#myCarousel"         
                 
 
 javascript:
@@ -43,7 +44,7 @@ javascript:
   $(document).ready(function() {
     $('.item:first').addClass('active');
     $('#myCarousel').carousel({
-    interval: 2000
+    interval: 2000000
     })
       
       $('#myCarousel').on('slid.bs.carousel', function() {
