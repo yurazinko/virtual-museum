@@ -36,17 +36,10 @@ div.container
       p = @exhibit.collection_number     
     div.col-md-6
       = image_tag @exhibit.photo.url if @exhibit.photo?
-      div#exhibit_map
   div.row
-    div.col-md-2
+    div.col-md-3
       
-    div.col-md-2
+    div.col-md-3
 
-    div.col-md-2
-      p = @exhibit.latitude
-    div.col-md-2
-      p = "Номер фотографії: #{@exhibit.photo_number}"
-    div.col-md-2
-      p = "Дата надходження: #{@exhibit.date_of_receipt}"  
-    div.col-md-2
-      p = "Номер акту прийому: #{@exhibit.act_of_reception_num}"        
+    div.col-md-6
+      iframe allowfullscreen="" frameborder="0" height="450" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyChJvkG27cUdouHAr4iqFQi6WxF_G5eoZI&q=#{@exhibit.address}" style="border:0" width="600"      

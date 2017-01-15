@@ -12,7 +12,7 @@ class ExhibitsController < ApplicationController
 	#	@exhibit.group_id = params[:group_id]
 		@exhibit.user = current_user
 		if @exhibit.save
-			redirect_to exhibits_path
+			redirect_to groups_path
 		else
 			puts @exhibit.errors.full_messages.inspect
 			render :new
@@ -21,6 +21,7 @@ class ExhibitsController < ApplicationController
 
 	def index
 		@exhibits = Exhibit.all
+		redirect_to groups_path
 	end
 
 	def edit
@@ -28,7 +29,7 @@ class ExhibitsController < ApplicationController
 
 	def update
 		if @exhibit.update(page_params)
-			redirect_to exhibits_path
+			redirect_to exhibit_path(@exhibit)
 		else
 			render :edit
 		end
@@ -39,9 +40,9 @@ class ExhibitsController < ApplicationController
 
 	def destroy
 		if @exhibit.destroy
-			redirect_to  exhibits_path
+			redirect_to  groups_path
 		else
-			redirect_to  exhibits_path, flash: {error: 'Something went wrong'}
+			redirect_to  groups_path, flash: {error: 'Something went wrong'}
 		end
 	end
 
@@ -49,7 +50,7 @@ class ExhibitsController < ApplicationController
 
 	def only_author!
 		unless @exhibit.user == current_user
-			redirect_to exhibits_path, flash: {error: 'Only author can update exhibit'}
+			redirect_to groups_path, flash: {error: 'Only author can update exhibit'}
 		end
 	end
 
