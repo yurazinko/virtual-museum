@@ -20,8 +20,8 @@ nav.navbar.navbar-default role="navigation"
             = render 'layouts/nav_links_for_auth' if user_signed_in?
         div.col-md-2
           = form_tag exhibits_path, method: :get, enforce_utf8: false, class: 'form-inline' do
-            div.input-group.col-md-12
-              = text_field_tag 'q', '', placeholder: 'Search...', class: 'form-control input-md'
+            div.input-group.search-bar
+              = text_field_tag 'q', '', placeholder: 'Search...', class: 'form-control input-md search-field'
               span.input-group-btn
                 = submit_tag '🔍', name: nil, class: 'btn btn-info'
                   i.glyphicon.glyphicon-search

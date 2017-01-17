@@ -191,6 +191,13 @@ footer p {
         font-size: 1.25em;
     }
 
+    .search-bar {
+        padding-top: 9px;
+    }
+    
+    .search-field, .btn-info {
+        background-color: black;
+    }
     .exhibit-preview{
         width: 45%;
         float: left;
