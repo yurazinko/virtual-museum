@@ -21,7 +21,7 @@ class ExhibitsController < ApplicationController
 
 	def index
 		@exhibits = Exhibit.all
-		redirect_to groups_path
+		@exhibits = @exhibits.where('name LIKE ?', "%#{params[:q]}%") if params[:q].present?
 	end
 
 	def edit
