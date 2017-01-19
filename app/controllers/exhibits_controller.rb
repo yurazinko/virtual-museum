@@ -21,7 +21,7 @@ class ExhibitsController < ApplicationController
 
 	def index
 		@exhibits = Exhibit.all
-		@exhibits = @exhibits.where('name LIKE ?', "%#{params[:q]}%") if params[:q].present?
+		@exhibits = @exhibits.where("LOWER(name) LIKE LOWER('%#{params[:q]}%')") if params[:q].present?
 	end
 
 	def edit
