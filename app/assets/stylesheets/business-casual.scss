@@ -197,6 +197,17 @@ footer p {
     
     .search-field, .btn-info {
         background-color: black;
+        border-color: white;
+    }
+
+    .btn-info:hover {
+        background-color: #FE8A5C;
+        border-color: white;
+        color: black;
+    }
+    .search-field:focus {
+        border-color: #FE8A5C;
+        box-shadow: none;
     }
     .exhibit-preview{
         width: 45%;
