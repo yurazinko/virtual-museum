@@ -9,7 +9,6 @@ class ExhibitsController < ApplicationController
 
 	def create
 		@exhibit = Exhibit.new(page_params)
-	#	@exhibit.group_id = params[:group_id]
 		@exhibit.user = current_user
 		if @exhibit.save
 			redirect_to groups_path

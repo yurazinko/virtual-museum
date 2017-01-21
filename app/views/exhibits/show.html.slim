@@ -2,8 +2,11 @@ div.container
   div.row
     div.col-md-6.exhibit-desc-block
       div.row
-        div.col-md-12.text-center
+        div.col-md-11.text-center
           h4 = @exhibit.name
+        div.col-md-1
+          = link_to '', edit_exhibit_path(@exhibit), class: 'glyphicon glyphicon-pencil exh-edit-btn' if user_signed_in?
+          = link_to '', exhibit_path(@exhibit), method: :delete, data: { confirm: "Ви впевнені, що хочете видалити експонат #{@exhibit.name}? Цю дію неможливо буде скасувати."}, class: 'glyphicon glyphicon-trash exh-edit-btn' if user_signed_in?  
       div.row
         div.col-md-6
           p.exh-field = "Розділ: "
@@ -15,11 +18,13 @@ div.container
           p = @exhibit.dating
           p.exh-field = "Розмір/вага: "
           p = @exhibit.size_or_weight   
-    div.col-md-6
+    div.col-md-6.photo-block
       = image_tag @exhibit.photo.url if @exhibit.photo?
   div.row
     div.col-md-6
-    div.col-md-6
+    div.col-md-6.geoblock
+      .glyphicon.glyphicon-map-marker
+      p = " #{@exhibit.address}"
       iframe#map allowfullscreen="" frameborder="0" height="450" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyChJvkG27cUdouHAr4iqFQi6WxF_G5eoZI&q=#{@exhibit.address}" style="border:0" width="600"
   div.row
     div.col-md-3

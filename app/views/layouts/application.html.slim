@@ -10,8 +10,7 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
     /! Custom Fonts
-    link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" /
-    link href="//fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css" /
+    link href="//fonts.googleapis.com/css?family=Philosopher" rel="stylesheet" type="text/css" /
   body
     = render 'layouts/messages'
     div#header.brand
@@ -25,3 +24,10 @@ html
     = render 'layouts/navigation'
     = yield
     = render 'layouts/footer'
+javascript:
+  $(function(){
+    //alert('5');
+    $('.navbar-nav>li>a').click(function(){
+      $(this).css("color", "yellow");
+    })
+  });    
