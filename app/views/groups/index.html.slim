@@ -58,12 +58,8 @@ javascript:
   $(document).ready(function() {
     $('.item:first').addClass('active');
     $('#myCarousel').carousel({
-    interval: 20000000
+    interval: 2000
     })
-      
-      $('#myCarousel').on('slid.bs.carousel', function() {
-        //alert("slid");
-    });
   });
 
   $('.item').click(function(){

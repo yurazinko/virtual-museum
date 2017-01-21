@@ -12,6 +12,5 @@
                 = exh.description
               div
                 = image_tag exh.photo.url(:thumb) if exh.photo?
-              div
-                = link_to '', edit_group_path(group), class: 'glyphicon glyphicon-pencil' if user_signed_in?   
+
 				

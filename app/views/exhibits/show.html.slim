@@ -17,56 +17,31 @@ div.container
           p.exh-field = "Датування: "
           p = @exhibit.dating
           p.exh-field = "Розмір/вага: "
-          p = @exhibit.size_or_weight   
+          p = @exhibit.size_or_weight
+        div.row
+          div.col-md-12.exh-desc-field
+            p.exh-field.text-center = "Опис: "
+            p = @exhibit.description     
     div.col-md-6.photo-block
-      = image_tag @exhibit.photo.url if @exhibit.photo?
-  div.row
-    div.col-md-6
-    div.col-md-6.geoblock
+      /= image_tag @exhibit.photo.url(:big), class: 'exh-photo-zoomed' if @exhibit.photo?
+      img.exh-photo-zoomed src="#{@exhibit.photo.url(:big)}" data-zoom-image="#{@exhibit.photo.url}"
+      br
       .glyphicon.glyphicon-map-marker
       p = " #{@exhibit.address}"
       iframe#map allowfullscreen="" frameborder="0" height="450" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyChJvkG27cUdouHAr4iqFQi6WxF_G5eoZI&q=#{@exhibit.address}" style="border:0" width="600"
   div.row
-    div.col-md-3
-      p.exh-field == "Фондова група: "
-      p = link_to @exhibit.group.name, @exhibit.group
-    div.col-md-6.text-center
-      h4 = @exhibit.name
-  div.row
-    div.col-md-3
-      p.exh-field = "Розділ: "
-      p = @exhibit.section
-      p.exh-field = "Матеріал: "
-      p = @exhibit.material
-      p.exh-field = "Стан збереження:"
-      p = @exhibit.condition
-      p.exh-field = "Місце зберігання: "
-      p = @exhibit.storage_location
-      p.exh-field = "Інвентарний номер: "
-      p = @exhibit.inventory_number
-    div.col-md-3
-      p.exh-field = "Датування: "
-      p = @exhibit.dating
-      p.exh-field = "Розмір/вага: "
-      p = @exhibit.size_or_weight
-      p.exh-field = "Консервація/реставрація: "
-      - if @exhibit.renewal == true
-        p.glyphicon.glyphicon-ok
-      - else 
-        p.glyphicon.glyphicon-minus
-      p.exh-field = "Дата реставрації/консервації: "  
-      - if @exhibit.renewal == true  
-        p = @exhibit.date_of_renewal
-      - else
-      	p.glyphicon.glyphicon-minus  
-      p.exh-field = "Номер колекції: "
-      p = @exhibit.collection_number     
-    div.col-md-6
-      = image_tag @exhibit.photo.url if @exhibit.photo?
-  div.row
-    div.col-md-3
-      
-    div.col-md-3
+    div.fullscreen-img
+      = image_tag @exhibit.photo.url, class: 'img-responsive', :html => {data_zoom_image: "#{@exhibit.photo}"} if @exhibit.photo?
+javascript:
+  
+  $(function(){
 
-    div.col-md-6
-      
+    $('.exh-photo-zoomed').elevateZoom({tint:true, tintColour:'#F90', tintOpacity:0.1, zoomWindowPosition: 11, easing : true});
+   // $('.photo-block').click(function(){
+   //   $('.fullscreen-img').css('display', 'block');
+   // })
+
+    //$('.fullscreen-img').click(function(){
+     // $(this).css('display', 'none');
+   // })
+  })
