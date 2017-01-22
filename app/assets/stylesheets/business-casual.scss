@@ -242,7 +242,7 @@ footer p {
         padding: 0 30px 0 30px;
     }
     .group-description-block{
-        height: 22em;
+        height: 25em;
         background: rgba(31,31,31,0.9);
         box-shadow: 7px 7px 10px black;
     }
@@ -255,9 +255,11 @@ footer p {
     .group-photo-block{
        /* margin-top: 6em;*/
     }
-
+    .current-img-group{
+        padding-top: 3em;
+    }
     .edit-buttons{
-        margin-top: 5em;
+        margin-top: 3em;
     }
 
     .glyphicon {
@@ -275,8 +277,13 @@ footer p {
 
     a.carousel-control {
         width: 10em;
+        background-image: rgba(0, 0, 0, 0.0000);
     }
     
+    a.left.carousel-control, a.right.carousel-control {
+        opacity: 0;
+        background-image: rgba(0, 0, 0, 0.0000);
+    }
     .slideshow-wrapper, .slideshow-wrapper-inner {
         padding:0;
     }
@@ -296,13 +303,34 @@ footer p {
       top: 145px;
       left: -80px;
     }
-
+    .next-group-title {
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: bold;
+      -ms-transform: rotate(270deg); /* IE 9 */
+      -webkit-transform: rotate(270deg); /* Chrome, Safari, Opera */
+      transform: rotate(270deg);
+      width: 150px;
+      position: relative;
+      border: 1px solid #1F1F1E;
+      background: rgba(31,31,31,0.9);
+      top: 145px;
+      left: 192px;
+    }
     .prev-group-img {
         position: relative;
         width: 106px;
         height: 150px;
         top: 59px;
         left: -72px;
+    }
+
+    .next-group-img {
+        position:relative;
+        width: 106px;
+        height: 150px;
+        top: 59px;
+        left: 73px;
     }
 
     div#header.brand {
