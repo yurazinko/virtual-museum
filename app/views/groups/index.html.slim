@@ -34,7 +34,7 @@ div.container.slideshow-wrapper
                     = group.name
                   p  
                     = group.description
-                  p
+                  p.group-counter
                     = "#{i+1}/#{@groups.size}"
                 div.col-md-3
                   div.next-group-title
@@ -67,7 +67,7 @@ javascript:
     $('.item').removeClass('active');
     setTimeout(function(){  
       $('.item:first').addClass('active');
-    }, 200);
+    }, 100);
   });
 /div.container
   div.col-md-12

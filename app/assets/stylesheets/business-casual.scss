@@ -208,7 +208,7 @@ footer p {
     }
     
     .search-field, .btn-info {
-        background-color: black;
+        background-color: transparent;
         border-color: white;
     }
 
@@ -248,15 +248,21 @@ footer p {
     }
     
     .group-description-block p {
-        font-size: 0.9em;
+        font-size: 1em;
         color: white;
     }
-
+    .group-counter{
+        position: absolute;
+        bottom: 0;
+    }
     .group-photo-block{
        /* margin-top: 6em;*/
     }
     .current-img-group{
-        padding-top: 3em;
+        margin-top: 3em;
+        margin-right: -15px;
+        height: 250px;
+        width: 177px;
     }
     .edit-buttons{
         margin-top: 3em;
