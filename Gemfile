@@ -14,6 +14,7 @@ gem 'mini_magick'
 gem 'jquery-ui-rails'
 gem 'ancestry'
 gem 'geocoder'
+gem 'kaminari'
 group :development, :test do
   gem 'byebug', platform: :mri
 end

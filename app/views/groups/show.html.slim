@@ -13,4 +13,7 @@ div.container
             p
               = exh.section
             div
-              = image_tag exh.photo.url(:thumb) if exh.photo?                
+              = image_tag exh.photo.url(:thumb) if exh.photo?
+      div.row
+        div.col-md-12        
+          = paginate @exhibits                        

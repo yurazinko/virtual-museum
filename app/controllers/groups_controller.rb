@@ -10,7 +10,7 @@ class GroupsController < ApplicationController
 	end
 
 	def show
-		@exhibits = Exhibit.where(group_id: [@group.subtree_ids])
+		@exhibits = Exhibit.where(group_id: [@group.subtree_ids]).page(params[:page]).per(10)
 	end
 
 	def new
