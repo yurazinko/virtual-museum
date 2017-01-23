@@ -156,8 +156,13 @@ footer p {
     }
     .title {
         font-family: 'Philosopher', sans-serif;
-        padding-top: 28px;
+        padding-top: 20px;
     }
+
+    .site-logo {
+        max-width: 80px;
+    }
+
     .navbar {
         border-radius: 0;
     }
@@ -286,10 +291,12 @@ footer p {
         background-image: rgba(0, 0, 0, 0.0000);
     }
     
-    a.left.carousel-control, a.right.carousel-control {
-        opacity: 0;
-        background-image: rgba(0, 0, 0, 0.0000);
+    a.carousel-control.left, a.carousel-control.right {
+        /*visibility: hidden;*/
+        background-image: none; 
     }
+
+
     .slideshow-wrapper, .slideshow-wrapper-inner {
         padding:0;
     }
@@ -364,6 +371,10 @@ footer p {
       height: 1px;
       margin: 0 auto;
       background: rgba(31,31,31,0.9);
+    }
+
+    .icon-prev, .icon-next {
+        visibility: visible;
     }
 }
 
