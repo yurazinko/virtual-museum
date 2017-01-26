@@ -5,7 +5,6 @@ class GroupsController < ApplicationController
 
 	def index
 		@groups = Group.roots
-		#@exhibits = @exhibits.where('name LIKE ?', "%#{params[:q]}%") if params[:q].present?
 		redirect_to exhibits_path if params[:q].present?
 	end
 
