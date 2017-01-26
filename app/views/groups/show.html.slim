@@ -1,7 +1,11 @@
 div.container
   div.row
-    h3 
-      = @group.name
+    div.col-md-3
+      h4
+        = @group.name
+    div.col-md-9
+      =render 'shared/breadcrumb', group: @group 
+  div.row
     div.col-md-3
       = render 'shared/submenu'
     div.col-md-9
@@ -16,4 +20,6 @@ div.container
               = image_tag exh.photo.url(:thumb) if exh.photo?
       div.row
         div.col-md-12        
-          = paginate @exhibits                        
+          = paginate @exhibits
+          =render 'shared/breadcrumb', group: @group 
+
