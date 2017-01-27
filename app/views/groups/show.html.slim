@@ -1,12 +1,12 @@
 div.container
   div.row
-    div.col-md-3
+    div.col-md-3.group-name
       h4
         = @group.name
     div.col-md-9
       =render 'shared/breadcrumb', group: @group 
   div.row
-    div.col-md-3
+    div.col-md-3.submenu-block
       = render 'shared/submenu'
     div.col-md-9
       - @exhibits.each do |exh|
