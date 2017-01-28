@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :users
   resources :exhibits
   resources :groups
+  resources :articles
 end

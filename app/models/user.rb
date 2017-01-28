@@ -34,7 +34,7 @@ class User < ApplicationRecord
   
   has_many :exhibits
   has_many :groups
-  
+  has_many :articles
 #  validates :name, presence: true
 
 end

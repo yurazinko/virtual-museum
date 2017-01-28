@@ -1,0 +1,14 @@
+div.container
+	div.row
+		div.col-md-3
+		div.col-md-6
+			= simple_form_for(@article) do |f|
+			  = f.error_notification
+
+			  = f.input :title, label: 'Заголовок:'
+			  br
+			  = f.input :description, :input_html => {:style=> 'height: 200px'}, label: 'Текст:'
+			  = f.label "Фото: "
+			  = f.file_field :photo, label: 'Фото'
+			  br
+			  = f.button :submit, value: 'Зберегти'
