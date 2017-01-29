@@ -1,44 +1,43 @@
-div.container
-	div.row
-		div.col-md-3
-		div.col-md-6
-			= simple_form_for(@exhibit) do |f|
-			  = f.error_notification
+= simple_form_for(@exhibit) do |f|
+  = f.error_notification
 
-			  = f.input :name, label: 'Назва:'
-			  = f.label 'Фондова група: '
-			  br
-			  = f.collection_select :group_id, Group.order(:name), :id, :name, label: 'Фондова група:'
-			  br
-			  br
-			  = f.input :description, :input_html => {:style=> 'height: 200px'}, label: 'Опис:'
-			  = f.input :section, label: 'Розділ:'
-			  = f.input :collection_number, label: 'Номер колекції:'
-			  = f.input :inventory_number, label: 'Інвентарний номер'
-			  = f.input :another_inv_num, label: 'Інший інвентарний номер'
-			  = f.label "Фото: "
-			  = f.file_field :photo, label: 'Фото'
-			  br
-			  = f.input :photo_number, label: 'Номер фотографії'
-			  = f.input :dating, label: 'Датування'
-			  = f.input :material, label: 'Матеріал'
-			  = f.input :size_or_weight, label: 'Розмір/вага'  
-			  = f.input :condition, label: 'Стан'
-			  = f.input :renewal, as: :boolean, label: 'Реставрація/консервація'
-			  = f.input :date_of_renewal, label: 'Дата реставрації/консервації'
-			  = f.input :storage_location, label: 'Місце зберігання'
-			  = f.input :locality, label: 'Місцевість'
-			  = f.input :address, label: 'Aдреса (тест)'
-			  = f.input :coordinates, label: 'GPS'
-			  = f.input :museum_director, label: 'Директор музею'
-			  = f.input :custodian, label: 'Зберігач фондів'
-			  = f.input :date_of_receipt, label: 'Дата прийому'
-			  = f.input :act_of_reception_num, label: 'Номер акту прийому'
-			  = f.input :notes, label: 'Примітки', :input_html => {:style=> 'height: 200px'}
-			  = f.button :submit, value: 'Зберегти'
-    div#gmaps-error
+  = f.input :name, label: 'Назва:'
+  = f.label 'Фондова група: '
+  br
+  = f.collection_select :group_id, Group.order(:name), :id, :name, label: 'Фондова група:'
+  br
+  br
+  = f.input :description, :input_html => {:style=> 'height: 200px'}, label: 'Опис:'
+  = f.input :section, label: 'Розділ:'
+  = f.input :collection_number, label: 'Номер колекції:'
+  = f.input :inventory_number, label: 'Інвентарний номер'
+  = f.input :another_inv_num, label: 'Інший інвентарний номер'
+  = f.label "Фото: "
+  = f.file_field :photo, label: 'Фото'
+  br
+  = f.input :photo_number, label: 'Номер фотографії'
+  = f.input :dating, label: 'Датування'
+  = f.input :material, label: 'Матеріал'
+  = f.input :size_or_weight, label: 'Розмір/вага'  
+  = f.input :condition, label: 'Стан'
+  = f.input :renewal, as: :boolean, label: 'Реставрація/консервація'
+  = f.input :date_of_renewal, label: 'Дата реставрації/консервації'
+  = f.input :storage_location, label: 'Місце зберігання'
+  = f.input :locality, label: 'Місцевість'
+  = f.input :address, label: 'Aдреса'
+  = f.input :museum_director, label: 'Директор музею'
+  = f.input :custodian, label: 'Зберігач фондів'
+  = f.input :date_of_receipt, label: 'Дата прийому'
+  = f.input :act_of_reception_num, label: 'Номер акту прийому'
+  = f.input :notes, label: 'Примітки', :input_html => {:style=> 'height: 200px'}
+  = f.button :submit, value: 'Зберегти'
+div#gmaps-error
+
 javascript:
+
   $(function(){
+    $("#exhibit_address").geocomplete();
+
     if (window.location.href.slice(-3) === 'new') {
       $('.exhibit_date_of_renewal').hide()
       $('#exhibit_renewal').click(function(){
