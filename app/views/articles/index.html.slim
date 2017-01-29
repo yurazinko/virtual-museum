@@ -16,7 +16,11 @@
           div.article-prewiev
             p 
               = article.description
-          a.btn.btn-default.btn-lg href="#"  Read More
+            btn.btn.btn-default.expand-button data-toggle="collapse" data-target=".article-hidden"
+              span.glyphicon.glyphicon-menu-down
+          div.article-hidden.collapse
+            p
+              = article.body
           hr
       
 

@@ -1,5 +1,6 @@
 - if user_signed_in?
-  li = link_to '+', new_exhibit_path
+  li = link_to '', new_exhibit_path, class: "glyphicon glyphicon-tasks"
+  li = link_to '', new_article_path, class: "glyphicon glyphicon-file"
   /li= link_to 'Sign out', destroy_user_session_path, :method=>'delete'
 - else
   li= link_to 'Sign in', new_user_session_path

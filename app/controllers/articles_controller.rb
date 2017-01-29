@@ -51,7 +51,7 @@ class ArticlesController < ApplicationController
 	end
 
 	def page_params
-		params[:article].permit(:title, :description, :photo)
+		params[:article].permit(:title, :description, :body, :photo)
 	end
 
 	def find_article
