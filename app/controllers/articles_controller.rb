@@ -32,7 +32,7 @@ class ArticlesController < ApplicationController
   end
 
   def index
-  	@articles = Article.all
+  	@articles = Article.all.page(params[:page]).per(10)
   end
 
   def destroy

@@ -12,21 +12,16 @@
             = link_to article.title, article
           = image_tag article.photo.url(:thumb), class: "img-left" if article.photo.present? 
             br
-            = article.created_at.strftime("%d.%m.%Y")
+            p
+              = article.created_at.strftime("%d-%m-%Y-%H")
           div.article-prewiev
             p 
               = article.description
-            btn.btn.btn-default.expand-button data-toggle="collapse" data-target=".article-hidden"
-              span.glyphicon.glyphicon-menu-down
-          div.article-hidden.collapse
-            p
-              = article.body
+            - if article.body.present?
+        .col-lg-12.text-center   
+          = submit_tag '▽', type: 'button' , class: "btn btn-default expand-button", data: { :"toggle"=> "collapse", "target" => ".#{article.created_at.strftime("%d-%m-%Y-%H-%M-%S")}" }
+        .col-lg-12   
+          = content_tag(:div, content_tag(:p, "#{article.body}"), class: "article-hidden collapse #{article.created_at.strftime("%d-%m-%Y-%H-%M-%S")}")    
           hr
-      
-
       .col-lg-12.text-center
-        ul.pager
-          li.previous
-            a href="#"  ← Older
-          li.next
-            a href="#"  Newer →
+        = paginate @articles

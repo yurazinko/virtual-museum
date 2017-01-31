@@ -9,18 +9,23 @@ div.container
           = link_to '', exhibit_path(@exhibit), method: :delete, data: { confirm: "Ви впевнені, що хочете видалити експонат #{@exhibit.name}? Цю дію неможливо буде скасувати."}, class: 'glyphicon glyphicon-trash exh-edit-btn' if user_signed_in?  
       div.row
         div.col-md-6
-          p.exh-field = "Розділ: "
+          p.exh-field 
+            | Розділ: 
           p = link_to @exhibit.group.name, @exhibit.group
-          p.exh-field = "Матеріал: "
+          p.exh-field 
+            | Матеріал: 
           p = @exhibit.material
         div.col-md-6
-          p.exh-field = "Датування: "
+          p.exh-field
+            | Датування: 
           p = @exhibit.dating
-          p.exh-field = "Розмір/вага: "
+          p.exh-field 
+            | Розмір/вага: 
           p = @exhibit.size_or_weight
         div.row
           div.col-md-12.exh-desc-field
-            p.exh-field.text-center = "Опис: "
+            p.exh-field.text-center 
+              | Опис: 
             p = @exhibit.description     
     div.col-md-6.photo-block
       /= image_tag @exhibit.photo.url(:big), class: 'exh-photo-zoomed' if @exhibit.photo?

@@ -26,8 +26,12 @@ h6 {
     letter-spacing: 1px;
 }
 
+a {
+    color: white;
+}
+
 a:hover {
-    color: none;
+    color: #FE8A5C;
 }
 
 p {
@@ -90,7 +94,13 @@ hr {
     box-shadow: 7px 7px 10px black;
     background: rgba(31,31,31,0.9);
 }
-
+.pager li > a{
+    background: rgba(31,31,31,0.9);
+}
+.pager li > a:hover{
+    background: rgba(31,31,31,0.9);
+    border-color: #FE8A5C;
+}
 .intro-text {
     text-transform: uppercase;
     font-size: 1.25em;
@@ -241,17 +251,21 @@ footer p {
         border-color: #FE8A5C;
         box-shadow: none;
     }
-    .exhibit-preview{
+    .exhibit-preview {
+
         width: 47.6%;
         height: 330px;
         float: left;
         padding: 10px;
         margin: 0px 10px 10px 10px;
         /*border: 1px solid blue;*/
-        border-top: 1px solid white;
         background: rgba(31,31,31,0.9);
         box-shadow: 7px 7px 10px black;
         overflow: hidden;
+    }
+
+    .exhibit-preview:hover {
+        background: rgba(31,31,31,1);
     }
 
     .exh-edit-btn {
@@ -291,13 +305,14 @@ footer p {
 
     .article-prewiev {
         font-size: 1.3em;
-        height: 230px;
-        overflow: hidden;
+       /* height: 230px;
+        overflow: hidden;*/
     }
 
-    .expand-button {
+    input[type="button"].expand-button {
         background: rgba(31,31,31,0.9);
         width: 40px;
+        color:white;
     }
 
     .expand-button span {
