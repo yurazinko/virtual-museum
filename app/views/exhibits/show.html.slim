@@ -2,7 +2,9 @@ div.container
   div.row
     div.col-md-6.exhibit-desc-block
       div.row
-        div.col-md-11.text-center
+        div.col-md-1
+          = link_to '', @exhibit.group, class: 'glyphicon glyphicon-arrow-left back-button'
+        div.col-md-10.text-center
           h4 = @exhibit.name
         div.col-md-1
           = link_to '', edit_exhibit_path(@exhibit), class: 'glyphicon glyphicon-pencil exh-edit-btn' if user_signed_in?
