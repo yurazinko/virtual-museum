@@ -3,7 +3,7 @@ html
   head
     meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
     meta content="width=device-width, initial-scale=1.0" name="viewport" /
-    title= content_for?(:title) ? yield(:title) : "My Application"
+    title = @title.present? ? @title : "Title"
     meta content=("#{content_for?(:description) ? yield(:description) : "My Applicatio2n"}") name="description" /
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     link href="//fonts.googleapis.com/css?family=Philosopher" rel="stylesheet" type="text/css"

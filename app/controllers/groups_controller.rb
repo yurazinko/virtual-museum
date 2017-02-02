@@ -6,10 +6,12 @@ class GroupsController < ApplicationController
 	def index
 		@groups = Group.roots
 		redirect_to exhibits_path if params[:q].present?
+		@title = "Фонди : Музей «Мостищина»"
 	end
 
 	def show
 		@exhibits = Exhibit.where(group_id: [@group.subtree_ids]).page(params[:page]).per(10)
+		@title = "#{@group.name} : #{@group.parent.name if @group.parent.present?} - Музей «Мостищина»" 
 	end
 
 	def new

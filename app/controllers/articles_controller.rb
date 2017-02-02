@@ -29,10 +29,12 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @title = "#{@article.title} - Музей «Мостищина»"
   end
 
   def index
   	@articles = Article.all.page(params[:page]).per(10)
+    @title = "Новини - Музей «Мостищина»"
   end
 
   def destroy

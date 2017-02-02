@@ -35,6 +35,7 @@ class ExhibitsController < ApplicationController
 	end
 
 	def show
+		@title = "#{@exhibit.name} : #{@exhibit.group.name} - Музей «Мостищина»"
 	end
 
 	def destroy
