@@ -1,13 +1,19 @@
 footer.footer
   .container
     .row
-      .col-lg-12.text-center
-        p Copyright © Your Website 2016
-    .row
-      .col-md-11
-      .col-md-1
+      .col-md-3.footer-groups
+        = render "groups/footer_groups"
+      .col-md-6.text-center
+        p Copyright © Народний історико-краєзнавчий музей «Мостищина» 2016
+      .col-md-2.text-center
+        img.social-button alt="facebook" src=asset_path('facebook-icon.png') 
+        img.social-button  alt="twitter" src=asset_path('twitter-icon.png')   
+      .col-md-1.sys-buttons
         - if user_signed_in?
-          = link_to '', edit_user_registration_path, class: 'glyphicon glyphicon-user'
-          = link_to '', destroy_user_session_path, :method=>'delete', class: 'glyphicon glyphicon-off'
+          div
+            = link_to '', edit_user_registration_path, class: 'glyphicon glyphicon-user'
+          div
+            = link_to '', destroy_user_session_path, :method=>'delete', class: 'glyphicon glyphicon-off'
         - else
-        	= link_to '', new_user_session_path, class: 'glyphicon glyphicon-briefcase'
+          div
+        	  = link_to '', new_user_session_path, class: 'glyphicon glyphicon-briefcase'

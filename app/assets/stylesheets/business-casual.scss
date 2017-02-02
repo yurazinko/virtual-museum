@@ -443,6 +443,26 @@ footer p {
     .icon-prev, .icon-next {
         visibility: visible;
     }
+
+    .footer-groups  {
+        margin-top: 35px;
+    }
+    .footer-groups ul {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 1.1em;
+        float: left;
+    }
+
+    .social-button {
+        margin: 40px 10px 30px 20px;
+        width: 40px;
+        float:left;
+    }
+
+    .sys-buttons {
+        margin: 40px 0px 0px 0px;
+    }
 }
 
 @media screen and (min-width:1200px) {
