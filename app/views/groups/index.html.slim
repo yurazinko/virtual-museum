@@ -22,7 +22,7 @@ div.container.slideshow-wrapper
           - @groups.each_with_index do |group, i|
             div.item
               a href="#{group_path(group)}"
-                div.col-md-3
+                div.col-md-3.slide-side
                   div.pr-group-title
                     = @groups[i-1].name
                   = image_tag @groups[i-1].photo.url(:small), class: 'prev-group-img' if @groups[i-1].photo.present?
@@ -36,7 +36,7 @@ div.container.slideshow-wrapper
                     = group.description
                   p.group-counter
                     = "#{i+1}/#{@groups.size}"
-                div.col-md-3
+                div.col-md-3.slide-side
                   div.next-group-title
                     = @groups[next_element(i)].name
                   = image_tag @groups[next_element(i)].photo.url(:small), class: 'next-group-img'

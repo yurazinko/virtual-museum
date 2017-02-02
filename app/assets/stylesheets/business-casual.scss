@@ -37,7 +37,7 @@ a:hover {
 p {
     font-size: 1.25em;
     line-height: 1.6;
-    color: #000;
+    color: white;
 }
 
 hr {
@@ -89,7 +89,6 @@ hr {
 .box {
     margin-bottom: 20px;
     padding: 5px 5px 15px 5px;
-    /*background: #1F1F1E;*/
     color: white;
     box-shadow: 7px 7px 10px black;
     background: rgba(31,31,31,0.9);
@@ -100,6 +99,15 @@ hr {
 .pager li > a:hover{
     background: rgba(31,31,31,0.9);
     border-color: #FE8A5C;
+}
+
+.slide-side {
+    visibility: hidden;
+    height: 1px;
+}
+
+.carousel-control.groups-carousel {
+    width: 70px;
 }
 .intro-text {
     text-transform: uppercase;
@@ -120,7 +128,6 @@ hr {
 }
 
 footer {
-    /*background: #fff;*/
     margin-top: 10px;
     padding-bottom: 10px;
     background: rgba(31,31,31,0.9);
@@ -128,7 +135,7 @@ footer {
 
 footer p {
     margin: 0;
-    padding: 50px 0;
+    padding: 20px 0 0 0;
 }
 
 #map {
@@ -144,7 +151,6 @@ footer p {
         text-shadow: 2px 3px 5px black;
         font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
         font-size: 2.5em;
-       /* font-weight: 700;*/
         line-height: normal;
         color: #fff;
     }
@@ -197,11 +203,6 @@ footer p {
         background-color: #1F1F1E;
         border-top: 1px solid white;
         border-bottom: 1px solid white;
-        /*background: rgba(255,255,255,0.9);*/
-    }
-
-    .nav>li>a {
-      /*  padding: 0 10px 0 10px; */
     }
 
     .navbar-nav>li>a {
@@ -258,7 +259,6 @@ footer p {
         float: left;
         padding: 10px;
         margin: 0px 10px 10px 10px;
-        /*border: 1px solid blue;*/
         background: rgba(31,31,31,0.9);
         box-shadow: 7px 7px 10px black;
         overflow: hidden;
@@ -301,7 +301,6 @@ footer p {
         bottom: 0;
     }
     .group-photo-block{
-       /* margin-top: 6em;*/
     }
 
     .group-name {
@@ -311,8 +310,6 @@ footer p {
 
     .article-prewiev {
         font-size: 1.3em;
-       /* height: 230px;
-        overflow: hidden;*/
     }
 
     input[type="button"].expand-button {
@@ -357,7 +354,6 @@ footer p {
     }
     
     a.carousel-control.left, a.carousel-control.right {
-        /*visibility: hidden;*/
         background-image: none; 
     }
 
@@ -366,6 +362,9 @@ footer p {
         padding:0;
     }
 
+    .slide-side {
+        visibility: visible;
+    }
 
     .pr-group-title {
       text-transform: uppercase;
@@ -493,7 +492,6 @@ footer p {
 }
 
 a.nav-link.tree.active {
-    /*padding: 5px;*/
     border: 1px solid #FE8A5C;
     color: #FE8A5C;
 }
@@ -523,19 +521,9 @@ select#exhibit_group_id, select#group_parent_id {
     padding:0;
 }
 
-.exhibit-desc-block {
-   /* background: rgba(31,31,31,0.9);
-    color: white;
-    box-shadow: 0px 7px 10px black;*/
-}
 
-.submenu {
-    /*background-color: #1F1F1E;*/
-}
 .geoblock, .photo-block {
     border-top: 15px solid transparent;
-  /*  background: rgba(31,31,31,0.9);
-    box-shadow: 7px 7px 10px black;*/
 }
 .glyphicon-map-marker {
     height: 50px;
