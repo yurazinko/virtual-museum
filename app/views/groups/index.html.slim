@@ -39,7 +39,7 @@ div.container.slideshow-wrapper
                 div.col-md-3.slide-side
                   div.next-group-title
                     = @groups[next_element(i)].name
-                  = image_tag @groups[next_element(i)].photo.url(:small), class: 'next-group-img'
+                  = image_tag @groups[next_element(i)].photo.url(:small), class: 'next-group-img' if @groups[next_element(i)].photo.present?
               br
               div.edit-buttons
                 = link_to '', new_group_path, class: 'glyphicon glyphicon-plus' if user_signed_in?
