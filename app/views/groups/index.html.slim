@@ -25,9 +25,9 @@ div.container.slideshow-wrapper
                 div.col-md-3
                   div.pr-group-title
                     = @groups[i-1].name
-                  = image_tag @groups[i-1].photo.url(:small), class: 'prev-group-img' if @groups[i-1].photo?
+                  = image_tag @groups[i-1].photo.url(:small), class: 'prev-group-img' if @groups[i-1].photo.present?
                 div.group-photo-block.col-md-3
-                  = image_tag group.photo.url(:thumb), class: 'current-img-group' if group.photo?
+                  = image_tag group.photo.url(:thumb), class: 'current-img-group' if group.photo.present?
 
                 div.group-description-block.col-md-3  
                   h4

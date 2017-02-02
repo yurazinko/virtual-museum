@@ -6,7 +6,7 @@ class GroupsController < ApplicationController
 	def index
 		@groups = Group.roots
 		redirect_to exhibits_path if params[:q].present?
-		@title = "Фонди : Музей «Мостищина»"
+		@title = "Фонди - Музей «Мостищина»"
 	end
 
 	def show
@@ -22,7 +22,7 @@ class GroupsController < ApplicationController
 		@group = Group.new(group_params)
 		@group.user_id = current_user.id
 		if @group.save
-			redirect_to groups_path
+			redirect_to group_path(@group)
 		else
 			render :new
 		end
@@ -33,7 +33,7 @@ class GroupsController < ApplicationController
 
 	def update
 		if @group.update_attributes(group_params)
-			redirect_to groups_path
+			redirect_to group_path(@group)
 		else
 			render :edit
 		end
