@@ -307,6 +307,13 @@ footer p {
         background: rgba(31,31,31,0.9);
         color: white;
     }
+    .group-name h4 {
+        float: left;
+    }
+
+    .group-name .glyphicon{
+        margin: 10px 0 0 10px;
+    }
 
     .article-prewiev {
         font-size: 1.3em;
