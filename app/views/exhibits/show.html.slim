@@ -1,6 +1,6 @@
-div.container
+div.container.box
   div.row
-    div.col-md-6.exhibit-desc-block
+    div.col-md-6.exh-desc-field
       div.row
         div.col-md-1
           = link_to '', @exhibit.group, class: 'glyphicon glyphicon-arrow-left back-button'
@@ -13,24 +13,76 @@ div.container
         div.col-md-6
           p.exh-field 
             | Розділ: 
-          p = link_to @exhibit.group.name, @exhibit.group
+          p.text-capitalize = link_to @exhibit.group.name, @exhibit.group
           p.exh-field 
             | Матеріал: 
-          p = @exhibit.material
+          p.text-capitalize 
+            = @exhibit.material
+          p.exh-field
+            | Стан збереження:
+          p.text-capitalize
+            = @exhibit.condition            
         div.col-md-6
           p.exh-field
             | Датування: 
-          p = @exhibit.dating
+          p.text-capitalize 
+            = @exhibit.dating
           p.exh-field 
             | Розмір/вага: 
-          p = @exhibit.size_or_weight
+          p.text-capitalize 
+            = @exhibit.size_or_weight
+          p.exh-field 
+            | Реставрація/Консерація:
+          - if @exhibit.renewal == true
+            p.glyphicon.glyphicon-ok
+          - else 
+            p.glyphicon.glyphicon-minus
         div.row
           div.col-md-12.exh-desc-field
             p.exh-field.text-center 
               | Опис: 
-            p = @exhibit.description     
+            p = @exhibit.description
+        div.row
+          div.col-md-6.exh-desc-field
+            p.exh-field 
+              | № колекції: 
+            p.text-uppercase 
+              = @exhibit.collection_number
+            p.exh-field
+              | № фотографії
+            p.text-uppercase
+              = @exhibit.photo_number
+            p.exh-field
+              | № акту прийому
+            p.text-uppercase
+              = @exhibit.act_of_reception_num
+            p.exh-field
+              | Місце зберігання:
+            p.text-capitalize
+              = @exhibit.storage_location                        
+          div.col-md-6
+            p.exh-field
+              | Інвентарний №
+            p.text-uppercase 
+              = @exhibit.inventory_number
+            p.exh-field
+              | Інший інвентарний №
+            p.text-uppercase
+              = @exhibit.another_inv_num
+            p.exh-field
+              | Дата прийому:
+            p.text-uppercase
+              = @exhibit.date_of_receipt
+            p.exh-field
+              | Дата реставрації/консервації:
+            p.text-uppercase
+              = @exhibit.date_of_renewal        
+        div.row
+          div.col-md-12.exh-desc-field
+            p.exh-field.text-center 
+              | Примітки: 
+            p = @exhibit.notes                           
     div.col-md-6.photo-block
-      /= image_tag @exhibit.photo.url(:big), class: 'exh-photo-zoomed' if @exhibit.photo?
       img.exh-photo-zoomed src="#{@exhibit.photo.url(:big)}" data-zoom-image="#{@exhibit.photo.url}"
       br
       .glyphicon.glyphicon-map-marker
