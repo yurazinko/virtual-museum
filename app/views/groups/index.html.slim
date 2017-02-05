@@ -7,11 +7,10 @@ div.container
           | Фонди
         hr
         img.img-responsive.img-border.img-left style="width: 300px" alt="" src=asset_path('intro4.jpg')
-        p Фонди налічують 1855 одиниць збережень. В експозиції першої кімнати — пам'ятки археології. У другій — експозиція про діячів легіону Українських Січових Стрільців Галичини, національно-визвольні змагання у краї. У центральній кімнаті представлено старовинні меблі, речі, картини, 300 книжок рідкісних видань, зброю та ін. 
+        p 
+          | Фонди налічують 1855 одиниць збережень. В експозиції першої кімнати — пам'ятки археології. У другій — експозиція про діячів легіону Українських Січових Стрільців Галичини, національно-визвольні змагання у краї. У центральній кімнаті представлено старовинні меблі, речі, картини, 300 книжок рідкісних видань, зброю та ін. 
         p
-          | A huge thanks to
-          a href="#" target="_blank"  Death to the Stock Photo
-          | for allowing us to use the beautiful photos that make this template really come to life. When using this template, make sure your photos are decent. Also make sure that the file size on your photos is kept to a minumum to keep load times to a minimum.
+          | У музеї зберігаються мистецькі твори, речі побуту, археологічні знахідки, нумізматика, матеріали (документи, щоденники) про рідний край, давня література, інформація про видатних людей Мостищини. Значну цінність становлять картини видатної художниці Олени Кульчицької, знайдені в селах Малнів і Черневе. 
 div.container.slideshow-wrapper
   div.col-md-12.slideshow-wrapper-inner
     /h1 Bootstrap 3 Thumbnail Slider
@@ -28,7 +27,6 @@ div.container.slideshow-wrapper
                   = image_tag @groups[i-1].photo.url(:small), class: 'prev-group-img' if @groups[i-1].photo.present?
                 div.group-photo-block.col-md-3
                   = image_tag group.photo.url(:thumb), class: 'current-img-group' if group.photo.present?
-
                 div.group-description-block.col-md-3  
                   h4
                     = group.name
@@ -51,9 +49,8 @@ div.container.slideshow-wrapper
                 = link_to '', group_path(group), method: :delete, data: { confirm: "Ви впевнені, що хочете видалити фондову групу #{group.name}? Цю дію неможливо буде скасувати."}, class: 'glyphicon glyphicon-trash' if user_signed_in?      
                
         a.left.carousel-control.groups-carousel data-slide="prev" href="#myCarousel"
-        a.right.carousel-control.groups-carousel data-slide="next" href="#myCarousel"         
-                
-
+        a.right.carousel-control.groups-carousel data-slide="next" href="#myCarousel"
+            
 javascript:
 
   $(document).ready(function() {
@@ -67,5 +64,5 @@ javascript:
     $('.item').removeClass('active');
     setTimeout(function(){  
       $('.item:first').addClass('active');
-    }, 500);
+    }, 300);
   });
