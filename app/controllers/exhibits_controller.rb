@@ -11,7 +11,7 @@ class ExhibitsController < ApplicationController
 		@exhibit = Exhibit.new(page_params)
 		@exhibit.user = current_user
 		if @exhibit.save
-			redirect_to groups_path
+			redirect_to exhibit_path(@exhibit)
 		else
 			puts @exhibit.errors.full_messages.inspect
 			render :new
