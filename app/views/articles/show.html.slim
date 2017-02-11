@@ -16,3 +16,4 @@
             p
               = @article.body
           hr
+            = link_to '', article_path(@article), method: :delete, data: { confirm: "Ви впевнені, що хочете видалити цю новину? Цю дію неможливо буде скасувати."}, class: 'glyphicon glyphicon-trash exh-edit-btn' if user_signed_in?

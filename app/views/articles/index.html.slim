@@ -10,7 +10,7 @@
         .col-lg-12
           h2.text-center
             = link_to article.title, article
-          = image_tag article.photo.url(:thumb), class: "img-left" if article.photo.present? 
+          = image_tag article.photo.url(:thumb), class: "img-left article-photo-prev" if article.photo.present? 
             br
             p
               = article.created_at.strftime("%d-%m-%Y-%H")

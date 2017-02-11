@@ -25,11 +25,11 @@ div.container.box
         div.col-md-6
           p.exh-field
             | Датування: 
-          p.text-capitalize 
+          p
             = @exhibit.dating
           p.exh-field 
             | Розмір/вага: 
-          p.text-capitalize 
+          p
             = @exhibit.size_or_weight
           p.exh-field 
             | Реставрація/Консерація:
@@ -81,26 +81,48 @@ div.container.box
           div.col-md-12.exh-desc-field
             p.exh-field.text-center 
               | Примітки: 
-            p = @exhibit.notes                           
+            p = @exhibit.notes 
+
     div.col-md-6.photo-block
-      img.exh-photo-zoomed src="#{@exhibit.photo.url(:big)}" data-zoom-image="#{@exhibit.photo.url}"
+      img#myImg.exh-photo-zoomed src="#{@exhibit.photo.url(:big)}" data-zoom-image="#{@exhibit.photo.url}"
+      #myModal.modal
+        span.close onclick="document.getElementById('myModal').style.display='none'"  ×
+        img#img01.modal-content
+        #caption
+          = @exhibit.name
+
       br
       .glyphicon.glyphicon-map-marker
       p = " #{@exhibit.address}"
       iframe#map allowfullscreen="" frameborder="0" height="450" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyChJvkG27cUdouHAr4iqFQi6WxF_G5eoZI&q=#{@exhibit.address}" style="border:0" width="600"
-  div.row
-    div.fullscreen-img
-      = image_tag @exhibit.photo.url, class: 'img-responsive', :html => {data_zoom_image: "#{@exhibit.photo}"} if @exhibit.photo?
+
 javascript:
   
   $(function(){
+    $('.exh-photo-zoomed').elevateZoom({
+      zoomType: 'lens',
+      lensShape: 'round',
+      lensSize: 200,
+      //tint:true, 
+      //tintColour:'#F90', 
+      //tintOpacity:0.6, 
+      zoomWindowPosition: 9,
+      scrollZoom : true
+    });
 
-    $('.exh-photo-zoomed').elevateZoom({tint:true, tintColour:'#F90', tintOpacity:0.1, zoomWindowPosition: 11, easing : true});
-   // $('.photo-block').click(function(){
-   //   $('.fullscreen-img').css('display', 'block');
-   // })
+    var modal = $('#myModal');
+    var img = $('#myImg');
+    var modalImg = $('#img01');
+    var captionText = $('#caption');
+    img.click(function(){
+        modal.css('display', 'block');
+        modalImg.attr("src", this.src);
+        captionText.innerHTML = this.alt;
+    })
 
-    //$('.fullscreen-img').click(function(){
-     // $(this).css('display', 'none');
-   // })
+    var span = $('.close')[0];
+    span.click(function() { 
+      modal.css("display" ,"none")
+    })
   })
+
