@@ -10,6 +10,12 @@ div.container
     div.col-md-3.submenu-block
       = render 'shared/submenu'
     div.col-md-9
+      - unless @exhibits.present?
+        div.empty-message.text-center
+          p 
+            | На даний момент тут нічого немає
+            br
+            = link_to "Додати експонат", new_exhibit_path, class: 'small-text' if user_signed_in?
       - @exhibits.each do |exh|
         = link_to exh do
           div.exhibit-preview

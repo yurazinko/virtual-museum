@@ -84,7 +84,7 @@ div.container.box
             p = @exhibit.notes 
 
     div.col-md-6.photo-block
-      img#myImg.exh-photo-zoomed src="#{@exhibit.photo.url(:big)}" data-zoom-image="#{@exhibit.photo.url}"
+      img#myImg.exh-photo-zoomed src="#{@exhibit.photo.url(:big)}" data-zoom-image="#{@exhibit.photo.url}" alt="#{@exhibit.name}"
       #myModal.modal
         span.close onclick="document.getElementById('myModal').style.display='none'"  ×
         img#img01.modal-content
@@ -103,10 +103,6 @@ javascript:
       zoomType: 'lens',
       lensShape: 'round',
       lensSize: 200,
-      //tint:true, 
-      //tintColour:'#F90', 
-      //tintOpacity:0.6, 
-      zoomWindowPosition: 9,
       scrollZoom : true
     });
 

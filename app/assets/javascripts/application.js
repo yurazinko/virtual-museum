@@ -17,4 +17,5 @@
 //= require bootstrap-sprockets
 //= require jquery-ui/widgets/datepicker
 //= require jquery.elevatezoom.js
+//= require jquery-rotate.js
 //= require_tree .

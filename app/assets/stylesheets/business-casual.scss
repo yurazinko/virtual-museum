@@ -293,8 +293,25 @@ footer p {
     .group-name .glyphicon {
         margin: 10px 0 0 10px;
     }
+    .empty-message {
+        background: rgba(31, 31, 31, 0.9);
+        height: 290px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 5px;
+    }
+    .empty-message > p {
+        position: relative;
+        top: 45%;
+    }
+    .empty-message a {
+        font-size: 0.7em;
+    }
     .article-prewiev {
         font-size: 1.3em;
+    }
+    .expand-button, .expand-button:focus {
+        background-color: transparent;
     }
     input[type="button"].expand-button {
         background: rgba(31, 31, 31, 0.9);

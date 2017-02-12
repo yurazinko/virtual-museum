@@ -23,5 +23,5 @@ nav.navbar.navbar-default role="navigation"
             div.input-group.search-bar
               = text_field_tag 'q', '', placeholder: 'Пошук...', class: 'form-control input-md search-field'
               span.input-group-btn
-                = submit_tag '🔍', name: nil, class: 'btn btn-info'
+                = image_submit_tag("search.png", class: 'btn btn-info margin', alt: 'Пошук')
                   i.glyphicon.glyphicon-search
