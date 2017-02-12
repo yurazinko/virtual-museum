@@ -1,0 +1,55 @@
+.container
+  .row
+    .box
+      .col-lg-12
+        hr/
+        h2.intro-text.text-center
+          strong Контакти
+        hr/
+      .col-md-8
+        /! Embedded Google Map using an iframe - to select your location find it on Google maps and paste the link as the iframe src. If you want to use the Google Maps API instead then have at it!
+        iframe allowfullscreen="" frameborder="0" height="400" src="//www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2575.7155176869765!2d23.14916407098015!3d49.79141450727929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9d5b062e33c08453!2z0IbRgdGC0L7RgNC40LrQvi3QutGA0LDRlNC30L3QsNCy0YfQuNC5INC80YPQt9C10LkgItCc0L7RgdGC0LjRidC40L3QsCI!5e0!3m2!1suk!2sua!4v1486918270487" style="border:0" width="100%" 
+      .col-md-4
+        p
+          | Телефон:
+        strong
+          p +380 97 660 83 36
+        p
+          | Email:
+        strong  
+          a href="mailto:nikmuseum@gmail.com" 
+            p
+              | nikmuseum@gmail.com
+        p
+          | Адреса:
+        strong  
+          p
+            | 81300 м. Мостиська, вулиця Михайла Грушевського, 31
+        br
+      .clearfix
+  .row
+    .box
+      .col-lg-12
+        hr/
+        h2.intro-text.text-center
+          | Напишіть нам
+        hr/
+        form role="form" 
+          .row
+            .form-group.col-lg-4
+              label Ім'я
+              input.form-control type="text" /
+            .form-group.col-lg-4
+              label Email
+              input.form-control type="email" /
+            .form-group.col-lg-4
+              label Телефон
+              input.form-control type="tel" /
+            .clearfix
+            .form-group.col-lg-12
+              label Повідомлення
+              textarea.form-control rows="6" 
+            .form-group.col-lg-12.text-center
+              input name="save" type="hidden" value="contact" /
+              button.btn.btn-default type="submit"  Відправити
+
