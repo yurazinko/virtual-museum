@@ -19,8 +19,7 @@
               = article.description
             - if article.body.present?
         .col-lg-12.text-center   
-          /= submit_tag '🢃', type: 'button' , class: "btn btn-default expand-button", data: { :"toggle"=> "collapse", "target" => ".#{article.created_at.strftime("%d-%m-%Y-%H-%M-%S")}" }
-          = image_submit_tag("expand.png", class: 'btn btn-default expand-button', style: 'width: 50px', data: { :"toggle"=> "collapse", "target" => ".#{article.created_at.strftime("%d-%m-%Y-%H-%M-%S")}" })
+          = image_submit_tag("expand.png", class: 'expand-button', style: 'width: 40px', data: { :"toggle"=> "collapse", "target" => ".#{article.created_at.strftime("%d-%m-%Y-%H-%M-%S")}" })
         .col-lg-12   
           = content_tag(:div, content_tag(:p, "#{article.body}"), class: "article-hidden collapse #{article.created_at.strftime("%d-%m-%Y-%H-%M-%S")}")    
           hr

@@ -311,7 +311,10 @@ footer p {
         font-size: 1.3em;
     }
     .expand-button, .expand-button:focus, .expand-button:active {
+        border: 1px solid white;
+        border-radius: 5px;
         background-color: transparent;
+        outline: none;
     }
     input[type="button"].expand-button {
         background: rgba(31, 31, 31, 0.9);
