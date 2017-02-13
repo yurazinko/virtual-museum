@@ -310,7 +310,7 @@ footer p {
     .article-prewiev {
         font-size: 1.3em;
     }
-    .expand-button, .expand-button:focus {
+    .expand-button, .expand-button:focus, .expand-button:active {
         background-color: transparent;
     }
     input[type="button"].expand-button {
