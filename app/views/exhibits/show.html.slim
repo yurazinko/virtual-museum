@@ -87,7 +87,7 @@ div.container.box
       - if @exhibit.photo.present?
         img#myImg.exh-photo-zoomed src="#{@exhibit.photo.url(:big)}" data-zoom-image="#{@exhibit.photo.url}" alt="#{@exhibit.name}"
       - else
-        = image_tag("default_photo.jpg")  
+        = image_tag("default_photo.jpg", id: "myImg", class: "exh-photo-zoomed")  
       #myModal.modal
         span.close onclick="document.getElementById('myModal').style.display='none'"  ×
         img#img01.modal-content
