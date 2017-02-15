@@ -24,7 +24,10 @@ div.container
             p
               = exh.dating
             div
-              = image_tag exh.photo.url(:thumb) if exh.photo?
+              - if exh.photo.present?
+                = image_tag exh.photo.url(:thumb)
+              - else   
+                = image_tag("/assets/default_photo.jpg", style: "max-width: 300px; max-height: 220px;")
       div.row
         div.col-md-12        
           = paginate @exhibits

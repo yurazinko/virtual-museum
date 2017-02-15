@@ -84,7 +84,7 @@ div.container.box
             p = @exhibit.notes 
 
     div.col-md-6.photo-block
-      img#myImg.exh-photo-zoomed src="#{@exhibit.photo.url(:big)}" data-zoom-image="#{@exhibit.photo.url}" alt="#{@exhibit.name}"
+      img#myImg.exh-photo-zoomed src="#{photo_path(@exhibit, @exhibit.photo.url(:big))}" data-zoom-image="#{photo_path(@exhibit, @exhibit.photo.url)}" alt="#{@exhibit.name}"
       #myModal.modal
         span.close onclick="document.getElementById('myModal').style.display='none'"  ×
         img#img01.modal-content

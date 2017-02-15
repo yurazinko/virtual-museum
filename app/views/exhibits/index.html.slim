@@ -11,6 +11,9 @@
               p
                 = exh.description
               div
-                = image_tag exh.photo.url(:thumb) if exh.photo?
+                - if exh.photo.present?
+                  = image_tag exh.photo.url(:thumb)
+                - else   
+                  = image_tag "/assets/default_photo.jpg"
 
 				
