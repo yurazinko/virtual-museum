@@ -84,7 +84,10 @@ div.container.box
             p = @exhibit.notes 
 
     div.col-md-6.photo-block
-      img#myImg.exh-photo-zoomed src="#{photo_path(@exhibit, @exhibit.photo.url(:big))}" data-zoom-image="#{photo_path(@exhibit, @exhibit.photo.url)}" alt="#{@exhibit.name}"
+      - if @exhibit.photo.present?
+        img#myImg.exh-photo-zoomed src="#{@exhibit.photo.url(:big)}" data-zoom-image="#{@exhibit.photo.url}" alt="#{@exhibit.name}"
+      - else
+        = image_tag("/assets/default_photo.jpg")  
       #myModal.modal
         span.close onclick="document.getElementById('myModal').style.display='none'"  ×
         img#img01.modal-content
