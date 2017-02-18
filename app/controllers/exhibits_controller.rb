@@ -1,7 +1,7 @@
 class ExhibitsController < ApplicationController
 	before_action :find_exhibit, only: [:show, :edit, :update, :destroy]
 	before_action :authenticate_user!, only: [:new, :create, :edit, :update]
-	#before_action :only_author!, only: [:edit, :update, :destroy]
+	before_action :only_admin!, only: [:new, :edit, :update, :destroy]
 
 	def new
 		@exhibit = 	Exhibit.new
@@ -48,9 +48,9 @@ class ExhibitsController < ApplicationController
 
 	private
 
-	def only_author!
-		unless @exhibit.user == current_user
-			redirect_to groups_path, flash: {error: 'Only author can update exhibit'}
+	def only_admin!
+		unless current_user.role == 'admin'
+			redirect_to groups_path, flash: {error: 'Only admin can update exhibit'}
 		end
 	end
 
