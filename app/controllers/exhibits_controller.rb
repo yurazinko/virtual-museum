@@ -1,7 +1,7 @@
 class ExhibitsController < ApplicationController
-	before_action :find_exhibit, only: [:show, :edit, :update, :destroy]
-	before_action :authenticate_user!, only: [:new, :create, :edit, :update]
-	before_action :only_admin!, only: [:new, :edit, :update, :destroy]
+	before_filter :find_exhibit, only: [:show, :edit, :update, :destroy]
+	before_filter :authenticate_user!, only: [:new, :create, :edit, :update]
+	before_filter :only_admin!, only: [:new, :create, :edit, :update, :destroy]
 
 	def new
 		@exhibit = 	Exhibit.new
