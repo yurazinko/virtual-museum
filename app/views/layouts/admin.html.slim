@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    meta content="width=device-width, initial-scale=1.0" name="viewport" /
+    title = @title.present? ? @title : "Title"
+    meta content=("#{content_for?(:description) ? yield(:description) : "My Applicatio2n"}") name="description" /
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    link href="//fonts.googleapis.com/css?family=Philosopher" rel="stylesheet" type="text/css"
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = javascript_include_tag "//maps.googleapis.com/maps/api/js?key=AIzaSyChJvkG27cUdouHAr4iqFQi6WxF_G5eoZI&libraries=places&v=3"
+    = csrf_meta_tags
+    /! Custom Fonts 
+  body
+    = render 'layouts/messages'
+    div#header.brand
+      div.row
+        div.col-md-1
+        div.col-md-2 
+          = image_tag('logo.png', class: 'site-logo')
+        div.col-md-8.title  
+          | Адмінка
+    /.address-bar м. Мостиська, вулиця Михайла Грушевського, 11
+    = render 'layouts/navigation'
+    = yield
+    = render 'layouts/footer'

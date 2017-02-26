@@ -16,6 +16,8 @@ gem 'ancestry'
 gem 'geocoder'
 gem 'kaminari'
 gem 'pry'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
 group :development, :test do
   gem 'byebug', platform: :mri
 end

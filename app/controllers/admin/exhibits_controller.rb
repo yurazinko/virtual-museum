@@ -2,8 +2,9 @@ class Admin::ExhibitsController < ApplicationController
 	before_filter :authenticate_user!
 	before_filter :only_admin!
 	before_filter :find_exhibit, only: [:show, :edit, :update, :destroy]
+	layout "admin"
 	
-	def index
+	 def index
 		@exhibits = Exhibit.all
 		@exhibits = @exhibits.where("LOWER(name) LIKE LOWER('%#{params[:q]}%')") if params[:q].present?
 	end

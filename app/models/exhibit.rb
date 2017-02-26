@@ -32,8 +32,11 @@
 #
 
 class Exhibit < ApplicationRecord
+	include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
+
 	mount_uploader :photo, PhotoUploader
-#	attr_accessor :address, :latitude, :longitude
+
 	belongs_to :group
 	belongs_to :user
 	geocoded_by :address
