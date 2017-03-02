@@ -266,6 +266,10 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    searchkick (2.1.1)
+      activemodel (>= 4.1)
+      elasticsearch (>= 1)
+      hashie
     selectize-rails (0.12.4)
     selenium-webdriver (3.0.3)
       childprocess (~> 0.5)
@@ -365,6 +369,7 @@ DEPENDENCIES
   rspec-rails
   rubocop
   sass-rails (~> 5.0)
+  searchkick
   selenium-webdriver
   simple_form
   slim-rails

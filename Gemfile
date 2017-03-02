@@ -18,6 +18,7 @@ gem 'kaminari'
 gem 'pry'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
+gem 'searchkick'
 group :development, :test do
   gem 'byebug', platform: :mri
 end
