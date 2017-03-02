@@ -19,7 +19,7 @@ class ExhibitsController < ApplicationController
 	end
 
 	def index
-		@exhibits = Exhibit.all#.reindex
+		@exhibits = Exhibit.all.reindex
 		#@exhibits = @exhibits.where("LOWER(name) LIKE LOWER('%#{params[:q]}%')") if params[:q].present?
 		@exhibits = Exhibit.search((params[:q].present? ? params[:q] : '*')).records if params[:q].present?
 	end
@@ -29,7 +29,7 @@ class ExhibitsController < ApplicationController
 
 	def update
 		if @exhibit.update(page_params)
-			redirect_to exhibit_path(@exhibit)
+			redirect_to exhibit_path(@exhibit.reindex)
 		else
 			render :edit
 		end
