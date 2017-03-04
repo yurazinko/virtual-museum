@@ -29,7 +29,7 @@ class ExhibitsController < ApplicationController
 
 	def update
 		if @exhibit.update(page_params)
-			redirect_to exhibit_path(@exhibit.reindex)
+			redirect_to exhibit_path(@exhibit)
 		else
 			render :edit
 		end
