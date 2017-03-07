@@ -1,4 +1,5 @@
 Virtual Museum
+[Link to application](https://floating-ridge-37622.herokuapp.com/)
 ================
 
 This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem

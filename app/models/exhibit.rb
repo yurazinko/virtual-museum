@@ -47,7 +47,7 @@ class Exhibit < ApplicationRecord
 	  as_json(
 	    only: [:name, :group_id, :description, :section, 
 			:collection_number, :inventory_number,
-		 	:another_inv_num, :photo, :photo_number, :dating, :material, 
+		 	:another_inv_num, :photo_number, :dating, :material, 
 		 	:size_or_weight, :condition, :renewal, :date_of_renewal, :address, :coordinates, :notes,
 		 	:storage_location, :locality, :museum_director, :custodian, 
 		 	:date_of_receipt, :act_of_reception_num] 
